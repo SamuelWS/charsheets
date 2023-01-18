@@ -1,0 +1,4184 @@
+<div class="sheet-useBackground">
+	<input type="checkbox" class="sheet-useBackground" style="display:none;" name="attr_background" value="1" checked />
+	<input type="checkbox" class="sheet-useBackground" style="display:none;" name="attr_background" value="2" />
+	<div class="sheet-background">
+		<div class="sheet-wrapper">
+
+			<div class="sheet-center" style="padding-top:10px;"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/ADnD_1E/images/logo.png" /></div>
+
+			<div class="sheet-personal_attributes" style="margin:-40px 0 10px 0;">
+				<div class="sheet-header">PERSONAL ATTRIBUTES</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{personal_attributes-info-show}" name="attr_personal_attributes-info-show" value="1" style="width: 230px; margin: 0 -20px 0 -200px;" checked="checked" /><span></span>
+				<table class="sheet-sect">
+					<tr>
+						<td>
+							<table>
+								<tr>
+									<td class="sheet-right"></td>
+									<td colspan="3"><input type="text" class="sheet-input-large" name="attr_character_name" title="@{character_name}" placeholder="Character Name" /></td>
+									<td class="sheet-right"></td>
+									<td><input type="text" class="sheet-input-large" name="attr_race" title="@{race}" placeholder="Race" /></td>
+								</tr>
+								<tr>
+									<td class="sheet-right"></td>
+									<td colspan="3"><input type="text" class="sheet-input-large" name="attr_alignment" title="@{alignment}" placeholder="Description" /></td>
+									<td class="sheet-right"></td>
+									<td><input type="text" class="sheet-input-large" name="attr_deity" title="@{deity}" placeholder="God" /></td>
+
+								<!--	<td><select name="attr_deity" title="@{deity}" style="width:75px;">
+
+									  <option value="0" selected="">None</option>
+
+										<option value="1">Sielach</option>
+										<option value="2">Sol</option>
+										<option value="3">Hancock</option>
+
+										<option value="4">Vylos</option>
+										<option value="5">Beor</option>
+
+										<option value="6">Sigr</option>
+										<option value="7">Tobrog</option>
+										<option value="8">Demilocke</option>
+									</select></td>-->
+								</tr>
+								<tr>
+									<td class="sheet-right"></td>
+									<td><input type="text" class="sheet-input-large" name="attr_class" title="@{class}" placeholder="Class" /></td>
+									<td class="sheet-right">Lvl:</td>
+									<td><input type="text" class="sheet-input-small" name="attr_level" title="@{level}" value="0" /></td>
+									<td class="sheet-right">XP:</td>
+									<td><input type="text" class="sheet-input-large" name="attr_xp" title="@{xp}" placeholder="0" /></td>
+									<td class="sheet-right">/</td>
+									<td><input type="text" class="sheet-input-large" name="attr_xp_1_max" title="@{xp_1_max}" placeholder="0" /></td>
+								</tr>
+								<tr>
+									<td class="sheet-right"></td>
+									<td><input type="text" class="sheet-input-large" name="attr_secondclass" title="@{secondclass}" placeholder="2nd class" /></td>
+									<td class="sheet-right">Lvl:</td>
+									<td><input type="text" class="sheet-input-small" name="attr_level_2" title="@{level_2}" value="0" /></td>
+									<td class="sheet-right">XP:</td>
+									<td><input type="text" class="sheet-input-large" name="attr_xp_2" title="@{xp_2}" placeholder="0" /></td>
+									<td class="sheet-right">/</td>
+									<td><input type="text" class="sheet-input-large" name="attr_xp_2_max" title="@{xp_2_max}" placeholder="0" /></td>
+								</tr>
+								<tr>
+									<td class="sheet-right"></td>
+									<td><input type="text" class="sheet-input-large" name="attr_thirdclass" title="@{thirdclass}" placeholder="3rd class" /></td>
+									<td class="sheet-right">Lvl:</td>
+									<td><input type="text" class="sheet-input-small" name="attr_level_3" title="@{level_3}" value="0" /></td>
+									<td class="sheet-right">XP:</td>
+									<td><input type="text" class="sheet-input-large" name="attr_xp_3" title="@{xp_3}" placeholder="0" /></td>
+									<td class="sheet-right">/</td>
+									<td><input type="text" class="sheet-input-large" name="attr_xp_3_max" title="@{xp_3_max}" placeholder="0" /></td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table style="margin-top:20px;">
+								<tr>
+									<td class="sheet-right sheet-text-large" style="padding:10px 5px 10px 40px;">HP:</td>
+									<td><input type="text" class="sheet-box" name="attr_HitPoints" title="@{HitPoints}" value="0" /></td>
+									<td></td>
+									<td colspan="3" style="text-align: center;">
+										<span class="sheet-right sheet-text-large" style="padding: 10px 5px 10px 0px;">Total AC:</span>
+										<input type="text" class="sheet-box" name="attr_ArmorClass" title="@{ArmorClass}" value="(10-floor(@{armortype}/3)-ceil(@{armorshield}/4)+@{armorbonus}-@{armormisc}-@{armormagic}-(@{armorshieldmagic}*ceil(@{armorshield}/4)))" disabled />
+										<td class="sheet-right">Misc:</td>
+										<td><input type="text" class="sheet-box" name="attr_armormisc" title="@{armormisc}" value="0" /></td>
+								</tr>
+								<tr>
+									<td class="sheet-right">HP Max:</td>
+									<td><input type="text" class="sheet-input-small" name="attr_hitpoints_max" title="@{hitpoints|max}" value="0" /></td>
+									<td class="sheet-right">Armor:</td>
+									<td colspan="3"><select name="attr_armortype" title="@{armortype}" style="width:150px; padding-bottom:-10px;">
+									  <option value="0" selected="">None</option>
+
+										<option value="6">Leather</option>
+										<option value="7">Padded</option>
+
+										<option value="9">Studded Leather</option>
+										<option value="10">Ring Mail</option>
+
+										<option value="12">Scale Mail</option>
+
+										<option value="15">Chain Mail</option>
+										<option value="16">Elfin Chain</option>
+
+										<option value="18">Splint Mail</option>
+										<option value="19">Banded Mail</option>
+
+										<option value="21">Plate Mail</option>
+
+									</select>
+									<td class="sheet-right">+ </td>
+									<td><input type="text" class="sheet-box" name="attr_armormagic" title="@{armormagic}" value="0" /></td>
+								</td>
+
+								</tr>
+								<tr>
+									<td class="sheet-right">Hit Dice:</td>
+									<td><input type="text" class="sheet-input-small" name="attr_hitdice" title="@{hitdice}" value="1" /></td>
+									<td class="sheet-right">Shield:</td>
+									<td colspan="3"><select name="attr_armorshield" title="@{armorshield}" style="width:150px; padding-bottom:-10px;">
+										<option value="0" selected="">None</option>
+
+										<option value="1">Buckler</option>
+										<option value="2">Small Shield</option>
+										<option value="3">Medium Shield</option>
+										<option value="4">Large Shield</option>
+									</select>
+									<td class="sheet-right" style="margin-left:-30px;">+ </td>
+									<td><input type="text" class="sheet-box" name="attr_armorshieldmagic" title="@{armorshieldmagic}" value="0" /></td>
+								</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								<!--	<td class="sheet-right" type="hidden">Wt:</td>
+									<td type="hidden"><input type="text" class="sheet-input-small" name="attr_armor_weight" title="@{armor_weight}" value="0" /></td>
+									<td class="sheet-right" type="hidden">Cost:</td>
+									<td type="hidden"><input type="text" class="sheet-input-small" name="attr_armor_cost" title="@{armor_cost}" value="0" /></td> -->
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table>
+								<tr>
+								<!--	<td class="sheet-right">Race:</td>
+									<td><input type="text" class="sheet-input-large" name="attr_race" title="@{race}" placeholder="Description" /></td>
+									<td class="sheet-right">XP:</td>
+									<td><input type="text" class="sheet-input-medium" name="attr_xp" title="@{xp}" value="0" /></td> -->
+								</tr>
+								<tr>
+								<!--	<td class="sheet-right">Deity:</td>
+									<td><input type="text" class="sheet-input-large" name="attr_deity" title="@{deity}" placeholder="Description" /></td>
+									<td></td>
+									<td></td> -->
+								</tr>
+								<tr>
+									<td></td>
+									</tr>
+								<tr>
+									<td class="sheet-right sheet-text-large" style="padding:40px 5px 0px 20px;">Sex:</td>
+									<td style="padding:40px 0px 0px 0px;"><input type="text" class="sheet-input-medium" name="attr_gender" title="@{gender}" placeholder="N/A" /></td>
+								</tr>
+								<tr>
+									<td class="sheet-right sheet-text-large" style="padding:10px 5px 0px 20px;">Age:</td>
+									<td><input type="text" class="sheet-input-small" name="attr_age" title="@{age}" value="0" /></td>
+								</tr>
+								<tr>
+								<td class="sheet-right sheet-text-large" style="padding:10px 5px 0px 20px;">Ht:</td>
+									<td><input type="text" class="sheet-input-small" name="attr_height" title="@{height}" value="0" /></td>
+								</tr>
+								<tr>
+									<td class="sheet-right sheet-text-large" style="padding:10px 5px 0px 20px;">Wt:</td>
+									<td><input type="text" class="sheet-input-small" name="attr_weight" title="@{weight}" value="0" /></td>
+								</tr>
+							<!--	<tr>
+									<td class="sheet-right">Eyes:</td>
+									<td><input type="text" class="sheet-input-medium" name="attr_eyes" title="@{eyes}" placeholder="Color" /></td>
+									<td class="sheet-right">Hair:</td>
+									<td><input type="text" class="sheet-input-medium" name="attr_hair" title="@{hair}" placeholder="Color" /></td>
+								</tr> -->
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="sheet-right;">Profession:
+							<input type="text" name="attr_title" placeholder="None" style="width: 75%;">
+						</td>
+						<td colspan="2" style="white-space: nowrap;">Languages:
+							<input type="text" name="attr_languages" placeholder="Common + languages known" style="width: 85%;">
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="sheet-abilities">
+				<div class="sheet-header">ABILITIES</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{abilities-info-show}" name="attr_abilities-info-show" value="1" style="width: 115px; margin: 0 -20px 0 -85px;" checked="checked" /><span></span>
+				<table class="sheet-sect">
+					<tr>
+						<td colspan="1"></td>
+ 						<td colspan="1" style="text-align:center;"><span>Base</span></td>
+						<td colspan="1" style="text-align:center;"><span>Total</span></td>
+						<td colspan="1" style="text-align:center;""><span>Ex</span></td>
+
+					</tr>
+					<tr>
+						<td class="sheet-center"><span class="sheet-text-large">STR</span></td>
+						<td><input type="text" class="sheet-input-medium" name="attr_base_strength" title="@{BaseStrength}" value="10" style="width:4em;"/></td>
+						<td><input type="text" class="sheet-input-small" name="attr_strength" title="@{strength}" value="10" style="width:2.5em;"/></td>
+						<td><input type="text" class="sheet-input-small" name="attr_ExceptionalStrength" title="@{ExceptionalStrength}" value="" min="0" max="100" style="width:2.5em;"/></td>
+						<td class="sheet-right">+Melee To Hit:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_meleebonus" title="@{meleebonus}" value="0"  readonly="readonly"/></td>
+						<td class="sheet-right">+Damage:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_dmgbonus" title="@{dmgbonus}" value="0"  readonly="readonly"/></td>
+						<td class="sheet-right">Encumbrance:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_encumbrancebonus" title="@{encumbrancebonus}" value="0"  readonly="readonly"/></td>
+						<td class="sheet-right"><button class="sheet-button" type="roll" name="attr_minorstrengthfeat-roll" title="%{selected|minorstrengthfeat-roll}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Minor Strength Feat}} {{1d@{minorstrengthdie} Roll=[[1d@{minorstrengthdie}cs<@{MinorStrengthFeat}cf>@{MinorStrengthFeat}]] }}">&nbsp;Minor</button></td>
+						<td><input type="text" class="sheet-input-small" name="attr_minorstrengthfeat" title="@{minorstrengthfeat}" value="0"  readonly="readonly"/></td>
+                        <td class="sheet-right">/</td>
+                        <td><input type="text" class="sheet-input-small" name="attr_minorstrengthdie" title="@{minorstrengthdie}" value="0"  readonly="readonly"/></td>
+                        <td class="sheet-right"><button class="sheet-button" type="roll" name="attr_majorstrengthfeat-roll" title="%{selected|majorstrengthfeat-roll}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Major Strength Feat}} {{ Major STR Feat=[[1d100cs<@{MajorStrengthFeat}cf>@{MajorStrengthFeat} ]] %}}">&nbsp;Major %</button></td>
+						<td><input type="text" class="sheet-input-small" name="attr_majorstrengthfeat" title="@{majorstrengthfeat}" value="0"  readonly="readonly"/></td>
+					 </tr>
+					<tr>
+						<td class="sheet-center"><span class="sheet-text-large">INT</span></td>
+						<td><input type="text" class="sheet-input-medium" name="attr_base_intelligence" title="@{BaseIntelligence}" value="10" style="width:4em;"/></td>
+						<td><input type="text" class="sheet-input-small" name="attr_intelligence" title="@{intelligence}" value="10" style="width:2.5em;"/></td>
+						<td><input type="text" class="sheet-input-small" name="attr_exceptionalintelligence" title="@{exceptionalintelligence}" value="0" min="0" max="100" style="width:2.5em;"/></td>
+						<td class="sheet-right">Add. Languages:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_bonuslanguages" title="@{bonuslanguages}" value="0" readonly="readonly"/></td>
+						<td class="sheet-right">Literate:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_literacy" title="@{literacy}" value="No" readonly="readonly"/></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sheet-center"><span class="sheet-text-large">WIS</span></td>
+						<td><input type="text" class="sheet-input-medium" name="attr_base_wisdom" title="@{BaseWisdom}" value="10" style="width:4em;"/></td>
+						<td><input type="text" class="sheet-input-small" name="attr_wisdom" title="@{wisdom}" value="10" style="width:2.5em;"/></td>
+						<td><input type="text" class="sheet-input-small" name="attr_exceptionalwisdom" title="@{exceptionalwisdom}" value="0" min="0" max="100" style="width:2.5em;"/></td>
+						<td class="sheet-right" style="display:none;"><button class="sheet-button" type="roll" name="attr_mentalsave-roll" title="%{selected|mentalsave-roll}" style="margin-left:1.5em;" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Mental Save}} {{Roll=[[1d20cs>@{MentalSaveBonus}cf<@{MentalSaveBonus}]]}}">&nbsp;Mental Save</button></td>
+						<td class="sheet-right">Mental Bonus</td>
+						<td><input type="text" style="margin-top:3px;" class="sheet-input-small" name="attr_mentalsavebonus" title="@{mentalsavebonus}" value="0" readonly="readonly"/></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sheet-center"><span class="sheet-text-large">DEX</span></td>
+						<td><input type="text" class="sheet-input-medium" name="attr_base_dexterity" title="@{BaseDexterity}" value="10" style="width:4em;"/></td>
+						<td><input type="text" class="sheet-input-small" name="attr_dexterity" title="@{dexterity}" value="10" style="width:2.5em;"/></td>
+						<td><input type="text" class="sheet-input-small" name="attr_exceptionaldexterity" title="@{exceptionaldexterity}" value="0" min="0" max="100" style="width:2.5em;"/></td>
+						<td class="sheet-right"><button class="sheet-button" style="margin-left:15px;" type="roll" name="attr_surprise-roll" title="%{selected|surprise-roll}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Surprise}} {{Roll=[[ 1d6 + @{SurpriseBonus}[BON] + ?{Modifier?|0}[MOD] ]]}}" >&nbsp;Surprise</button></td>
+						<td><input type="text" class="sheet-input-small" name="attr_surprisebonus" title="@{surprisebonus}" value="0" readonly="readonly"/></td>
+						<td class="sheet-right">+Missile Hit:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_rangedbonus" title="@{rangedbonus}" value="0" readonly="readonly"/></td>
+						<td class="sheet-right">AC Bonus:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_armorbonus" title="@{armorbonus}" value="0" readonly="readonly"/></td>
+						<td class="sheet-right"><button class="sheet-button" style="margin-right:-50px;" type="roll" name="attr_init-roll" title="%{selected|init-roll}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Initiative!}} {{Roll=[[ 1d6 + @{SurpriseBonus}[BON] + ?{Modifier?|0}[MOD] ]]}}" >&nbsp;INITIATIVE</button></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sheet-center"><span class="sheet-text-large">CON</span></td>
+						<td><input type="text" class="sheet-input-medium" name="attr_base_constitution" title="@{BaseConstitution}" value="10" style="width:4em;"/></td>
+						<td><input type="text" class="sheet-input-small" name="attr_constitution" title="@{constitution}" value="10" style="width:2.5em;"/></td>
+						<td><input type="text" class="sheet-input-small" name="attr_exceptionalconstitution" title="@{exceptionalconstitution}" value="0" min="0" max="100" style="width:2.5em;"/></td>
+						<td class="sheet-right">Warrior HP:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_hitpointbonusw" title="@{hitpointbonusw}" value="0" readonly="readonly"/></td>
+						<td class="sheet-right">Other HP:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_hitpointbonus" title="@{hitpointbonus}" value="0" readonly="readonly"/></td>
+						<td class="sheet-right"><button class="sheet-button" type="roll" name="attr_systemshock-roll" title="%{selected|systemshock-roll}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=System Shock Survival}} {{ Roll=[[1d100cs<@{SystemShock}cf>@{SystemShock} ]] %}}">&nbsp;Shock %</button></td>
+						<td><input type="text" class="sheet-input-small" name="attr_systemshock" title="@{systemshock}" value="0" readonly="readonly"/></td>
+						<td class="sheet-right"><button class="sheet-button" type="roll" name="attr_resurrectionsurvival-roll" title="%{selected|resurrectionsurvival-roll}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Resurrection Survival}} {{Roll=[[ 1d100cs<@{ResurrectionSurvival}cf>@{ResurrectionSurvival} ]] %}}">&nbsp;Res %</button></td>
+						<td><input type="text" class="sheet-input-small" name="attr_resurrectionsurvival" title="@{resurrectionsurvival}" value="0" readonly="readonly"/></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sheet-center"><span class="sheet-text-large">CHA</span></td>
+						<td><input type="text" class="sheet-input-mediuml" name="attr_base_charisma" title="@{BaseCharisma}" value="10" style="width:4em;"/></td>
+						<td><input type="text" class="sheet-input-small" name="attr_charisma" title="@{charisma}" value="10" style="width:2.5em;"/></td>
+						<td><input type="text" class="sheet-input-small" name="attr_exceptionalcharisma" title="@{exceptionalcharisma}" value="0" min="0" max="100" style="width:2.5em;"/></td>
+						<td class="sheet-right">Max Hench:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_maximumhenchmen" title="@{maximumhenchmen}" value="0" readonly="readonly"/></td>
+						<td class="sheet-right"><button class="sheet-button" type="roll" name="attr_loyalty-roll" title="%{selected|loyalty-roll}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Loyalty}} {{Roll=[[ 1d100 + @{LoyaltyBonus}[BON] ]] %}}">&nbsp;Loyalty</button></td>
+						<td><input type="text" class="sheet-input-small" name="attr_loyaltybonus" title="@{loyaltybonus}" value="0" readonly="readonly"/></td>
+						<td class="sheet-right"><button class="sheet-button" type="roll" name="attr_reaction-roll" title="%{selected|reaction-roll}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Reaction}} {{Roll=[[ 1d100 + @{ReactionBonus}[BON] ]] %}}" >&nbsp;React</button></td>
+						<td><input type="text" class="sheet-input-small" name="attr_reactionbonus" title="@{reactionbonus}" value="0" readonly="readonly"/></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<table class="sheet-sect sheet-border" style="margin-top:5px;">
+					<tr>
+						<td class="sheet-text-large sheet-right">Movement:</td>
+						<td class="sheet-right">Exploration <span class="sheet-text-small">(x20)</span>:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_movement_exp" title="@{movement_exp}" value="(ceil(@{movement}*@{current_encumbrance}-(14%@{current_encumbrance}))*20)" disabled /></td>
+						<td class="sheet-right">Run/Charge <span class="sheet-text-small">(x10)</span>:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_movement_run" title="@{movement_run}" value="(ceil(@{movement}*@{current_encumbrance}-(14%@{current_encumbrance}))*10)" disabled /></td>
+						<td class="sheet-right">Normal <span class="sheet-text-small">(x5)</span>:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_movement_normal" title="@{movement_normal}" value="(ceil(@{movement}*@{current_encumbrance}-(14%@{current_encumbrance}))*5)" disabled /></td>
+
+					</tr>
+					<tr>
+						<td></td>
+						<td class="sheet-right">Base Movement:</td> <td><input type="text" class="sheet-input-small" name="attr_movement" title="@{movement}" min="0" value="6" />
+						&nbsp;<input type="checkbox" name="attr_current_encumbrance" value="1" checked="checked" readonly="readonly" /></td>
+						<td class="sheet-right">Encumbered:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_movement_heavy" title="@{movement_heavy}" value="ceil(@{movement}*3/4-.5)" disabled />
+						&nbsp;<input type="checkbox" name="attr_current_encumbrance" value=".749" readonly="readonly" /></td>
+						<td class="sheet-right">Heavy Enc:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_movement_load" title="@{movement_load}" value="ceil(@{movement}*1/2)" disabled />
+						&nbsp;<input type="checkbox" name="attr_current_encumbrance" value=".5" readonly="readonly" /></td>
+						<td class="sheet-right">Max Load:</td>
+						<td><input type="text" class="sheet-input-small" name="attr_movement_max" title="@{movement_max}" value="ceil(@{movement}*1/4)" disabled />
+						&nbsp;<input type="checkbox" name="attr_current_encumbrance" value=".25" readonly="readonly" /></td>
+					</tr>
+				</table>
+				<hr>
+			</div>
+			<div class="sheet-exceptional_abilities">
+				<div class="sheet-header">SUPERNATURAL ABILITIES (ABILITIES ABOVE 18)</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{exceptional_abilities-info-show}" name="attr_exceptional_abilities-info-show" value="1" style="width: 135px; margin: 0 -20px 0 -105px;" /><span></span>
+				<table class="sheet-sect">
+					<tr>
+						<td><span class="sheet-text-large">STR:</span></td>
+						<td>Magic Feat:</td>
+						<td><button class="sheet-button sheet-magic-strength" type="roll" name="attr_magicstrengthfeat-roll" style="margin-left:0px;" title="%{selected|magicstrengthfeat-roll}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Magic Strength Feat}} {{1d@{magicstrengthdie} Roll=[[1d@{magicstrengthdie}cs<@{MagicStrengthFeat}cf>@{MagicStrengthFeat}]] }}">Roll</button>
+						<input type="text" class="sheet-input-small sheet-magic-strength" name="attr_magicstrengthfeat" title="@{magicstrengthfeat}" value="0"  readonly="readonly"/>
+                        /<input type="text" class="sheet-input-small sheet-magic-strength" name="attr_magicstrengthdie" title="@{magicstrengthdie}" value="0"  readonly="readonly"/></td>
+					</tr>
+					<tr>
+						<td><span class="sheet-text-large">INT:</span></td>
+						<td>Illusion/Phantasm Immunity (Lvl):</td>
+						<td class="sheet-left"><input type="text" class="sheet-input-medium" style="margin-top:5px;" name="attr_illusimmune" title="@{illusimmune}" placeholder="None" readonly="readonly"/></td>
+					</tr>
+					<tr>
+						<td><span class="sheet-text-large">WIS:</span></td>
+						<td>Spell Immunities:</td>
+						<td><textarea class="sheet-macro-text" style="width:78%; margin-top:5px;" name="attr_spellimmune" title="@{spellimmune}" readonly="readonly">None</textarea></td>
+					</tr>
+					<tr>
+						<td><span class="sheet-text-large">DEX:</span></td>
+						<td>NO SPECIAL EFFECTS (Thief Skills)</td>
+						<td><input type="text" class="sheet-input-medium" name="attr_none" title="@{none}" value="n/a" readonly="readonly"/></td>
+
+					</tr>
+					<tr>
+						<td><span class="sheet-text-large">CON:</span></td>
+
+						<td>Min HP Roll:</td>
+						<td><input type="text" class="sheet-input-small" style="margin-top:5px;" name="attr_minhproll" title="@{minhproll}" value="0" readonly="readonly"/>
+						Poison Save:
+						<input type="text" class="sheet-input-small" name="attr_poisonsave" title="@{poisonsave}" value="0" readonly="readonly"/>
+						Regeneration (HP/Turns):
+						<input type="text" class="sheet-input-small" name="attr_regeneration" title="@{regeneration}" value="0" readonly="readonly"/></td>
+					</tr>
+					<tr >
+						<td><span class="sheet-text-large">CHA:</span></td>
+						<td>NO SPECIAL EFFECTS (Only For Divine Creatures)</td>
+						<td><input type="text" class="sheet-input-medium" style="margin-top:5px;" name="attr_none" title="@{none}" value="n/a" readonly="readonly"/></td>
+
+
+						<td style="display:none;">Awe Aura (HD):</td>
+						<td style="display:none;"><input type="text" class="sheet-input-small" name="attr_awepower" title="@{awepower}" value="0" readonly="readonly"/></td>
+					</tr>
+
+				</table>
+
+				<hr>
+			</div>
+
+			<div class="sheet-saves">
+				<div class="sheet-header">SAVES</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{saves-info-show}" name="attr_saves-info-show" value="1" style="width: 90px; margin: 0 -20px 0 -60px;" checked="checked" /><span></span>
+				<table class="sheet-sect sheet-center">
+					<tr>
+						<td colspan="2">Paralysis, Poison, Death<br><button class="sheet-button" type="roll" value="/me must make a saving throw!&#x00A;&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Saving Throw}} {{Paralysis, Poison, Death=[[(?{Mod?|0}+1d20cs+(?{Race Bonus? |No, 0|Yes, +@{saveracial}})+(?{Poison? |No, 0|Yes, -@{poisonsave}}))>@{saveparalysispoisondeath}cf<@{saveparalysispoisondeath}]]}} {{Mod Applied=?{Mod?|0}}}" name="roll_saveparalysispoisondeath" title="%{selected|saveparalysispoisondeath}"> Roll</button><input type="text" class="sheet-input-small" name="attr_saveparalysispoisondeath" title="@{saveparalysispoisondeath}" value="0" /></td>
+						<td colspan="2">Petrification, Polymorph<br><button class="sheet-button" type="roll" value="/me must make a saving throw!&#x00A;&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Saving Throw}} {{Petrification, Polymorph=[[?{Mod?|0}+1d20cs>@{savepetrificationpolymorph}cf<@{savepetrificationpolymorph}]]}} {{Mod Applied=?{Mod?|0}}}" name="roll_savepetrificationpolymorph" title="%{selected|savepetrificationpolymorph}"> Roll</button><input type="text" class="sheet-input-small" name="attr_savepetrificationpolymorph" title="@{savepetrificationpolymorph}" value="0" /></td>
+						<td colspan="2">Rods, Staves, Wands<br><button class="sheet-button" type="roll" value="/me must make a saving throw!&#x00A;&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Saving Throw}} {{Rods, Staves, Wands=[[?{Mod?|0}+1d20cs+(?{Race Bonus? |No, 0|Yes, +@{saveracial}})+(?{Mental? |No, 0|Yes, +@{mentalsavebonus}})>@{saverodsstaveswands}cf<@{saverodsstaveswands}]]}} {{Mod Applied=?{Mod?|0}}}" name="roll_saverodsstaveswands" title="%{selected|saverodsstaveswands}"> Roll</button><input type="text" class="sheet-input-small" name="attr_saverodsstaveswands" title="@{saverodsstaveswands}" value="0" /></td>
+						<td colspan="2">Breath Weapon<br><button class="sheet-button" type="roll" value="/me must make a saving throw!&#x00A;&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Saving Throw}} {{Breath Weapons=[[?{Mod?|0}+1d20cs>@{savebreathweapons}cf<@{savebreathweapons}]]}} {{Mod Applied=?{Mod?|0}}}" name="roll_savebreathweapons" title="%{selected|savebreathweapons}"> Roll</button><input type="text" class="sheet-input-small" name="attr_savebreathweapons" title="@{savebreathweapons}" value="0" /></td>
+						<td colspan="2">Spells<br><button class="sheet-button" type="roll" value="/me must make a saving throw!&#x00A;&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Saving Throw}} {{Spells=[[?{Mod?|0}+1d20cs+(?{Race Bonus? |No, 0|Yes, +@{saveracial}})+(?{Mental? |No, 0|Yes, +@{mentalsavebonus}})>@{savespells}cf<@{savespells}]]}} {{Mod Applied=?{Mod?|0}}}" name="roll_savespells" title="%{selected|savespells}"> Roll</button><input type="text" class="sheet-input-small" name="attr_savespells" title="@{savespells}" value="0" /></td>
+						<td colspan="2">Racial Save Bonus<br><input type="text" class="sheet-input-small" name="attr_saveracial" title="@{saveracial}" value="0" readonly="readonly"/></td>
+					</tr>
+				</table>
+				<hr>
+			</div>
+
+			<div class="sheet-nonweapon_proficiencies">
+				<div class="sheet-header">WEAPON PROFICIENCIES</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{nonweapon_proficiencies-info-show}" name="attr_nonweapon_proficiencies-info-show" value="1" style="width: 275px; margin: 0px -20px 0 -245px;" /><span></span>
+				<div class="sheet-sect">
+					<fieldset class="repeating_nonweaponproficiencies">
+						<div class="sheet-sect sheet-border">
+							<table class="sheet-sect sheet-center" style="width:99%; margin-top:5px">
+								<tr>
+									<td style="width:20%; padding-right:20px;">
+									<select name="attr_name" title="@{repeating_nonweaponproficiencies_$X_name}" style="width:8em%; margin-left:20px;">
+
+									  <option value="0" selected="">None</option>
+										<option value="Aklys">Aklys</option>
+										<option value="Atlatl">Atlatl and Javelin</option>
+										<option value="Battle">Axe, Battle</option>
+										<option value="Hand">Axe, Hand</option>
+										<option value="Bardiche">Axe, Great</option>
+										<option value="Bardiche">Bardiche</option>
+										<option value="Bec">Bec de Corbin</option>
+										<option value="Bill">Bill-Guisarme</option>
+										<option value="Blowgun">Blowgun</option>
+										<option value="Bo">Bo Stick</option>
+										<option value="BowL">Bow, Long</option>
+										<option value="BowS">Bow, Short</option>
+										<option value="Caltrop">Caltrop</option>
+										<option value="Club">Club</option>
+										<option value="CBowHa">Crossbow, Hand</option>
+										<option value="CBowHe">Crossbow, Heavy</option>
+										<option value="CBowL">Crossbow, Light</option>
+										<option value="Dagger">Dagger</option>
+										<option value="Dart">Dart</option>
+										<option value="Fauchard">Fauchard</option>
+										<option value="FFork">Fauchard-Fork</option>
+										<option value="Fist">Fist</option>
+										<option value="Footman">Flail, Footman's</option>
+										<option value="Horseman">Flail, Horseman's</option>
+										<option value="ForkM">Fork, Military</option>
+										<option value="Garrote">Garrote Wire</option>
+										<option value="Glaive">Glaive</option>
+										<option value="GlaiveG">Glaive-Guisarme</option>
+										<option value="Guisarme">Guisarme</option>
+										<option value="GuisarmeV">Guisarme-Voulge</option>
+										<option value="Halberd">Halberd</option>
+										<option value="Harpoon">Harpoon</option>
+										<option value="HammerL">Hammer, Lucern</option>
+										<option value="Hammer">Hammer</option>
+										<option value="Hook">Hook Fauchard</option>
+										<option value="Javelin">Javelin</option>
+										<option value="Jo">Jo Stick</option>
+										<option value="Knife">Knife</option>
+										<option value="Lance">Lance</option>
+										<option value="Lasso">Lasso</option>
+										<option value="MaceF">Mace, Footman's</option>
+										<option value="MaceH">Mace, Horseman's</option>
+										<option value="Man">Man Catcher</option>
+										<option value="Morning Star">Morning Star</option>
+										<option value="Partisan">Partisan</option>
+										<option value="PickF">Pick, Military, Footman's</option>
+										<option value="PickH">Pick, Military, Horseman's</option>
+										<option value="Pike">Pike Awl</option>
+										<option value="Ranseur">Ranseur</option>
+										<option value="Sap">Sap</option>
+										<option value="Scimitar">Scimitar</option>
+										<option value="Sling">Sling</option>
+										<option value="Spear">Spear</option>
+										<option value="Spetum">Spetum</option>
+										<option value="Buckler">Spiked Buckler</option>
+										<option value="Staff">Staff, Quarter</option>
+										<option value="StaffS">Staff Sling</option>
+										<option value="SwordBa">Sword, Bastard</option>
+										<option value="SwordBr">Sword, Broad</option>
+										<option value="SwordF">Sword, Falchion</option>
+										<option value="SwordK">Sword, Khopesh</option>
+										<option value="SwordL">Sword, Long</option>
+										<option value="SwordS">Sword, Short</option>
+										<option value="SwordT">Sword, Two-handed</option>
+										<option value="Trident">Trident</option>
+										<option value="Voulge">Voulge</option>
+										<option value="Whip">Whip</option>
+
+									</select>
+									<br></td>
+
+									<td class="sheet-right">Proficiency:</td>
+									<td class="sheet-left" style="padding-left:5px;">
+										<select name="attr_rAttribute" style="width: 7em; vertical-align: text-bottom;">
+											<option value="0" selected="">None</option>
+											<option value="1">Proficient</option>
+											<option value="2">Specialized</option>
+										</select>
+									</td>
+									<td class="sheet-right">Slots:</td>
+									<td><input type="number" name="attr_rSlots" title="@{repeating_nonweaponproficiencies_$X_rSlots}" value="(0 + @{rAttribute})" class="sheet-input-small" style="margin-bottom: 6px;" disabled>
+									<td><br><span style="opacity: 0;margin: 2px;"></span></td>
+									<td class="sheet-right">Misc Modifier:</td>
+									<td><input type="number" name="attr_rModifier" title="@{repeating_nonweaponproficiencies_$X_rmodifier}" value="0" class="sheet-input-small" style="margin-bottom: 6px;">
+
+								</tr>
+							</table>
+
+						</div>
+					</fieldset>
+				</div>
+				<hr>
+			</div>
+
+			<div class="sheet-weapons">
+				<div class="sheet-header">MELEE WEAPONS</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{weapons-info-show}" name="attr_weapons-info-show" value="1" style="width: 115px; margin: 0 -20px 0 -85px;" checked="checked" /><span></span>
+
+				<div class="sheet-sect">
+					<fieldset class="repeating_weapon">
+					<div class="sheet-sect sheet-border">
+						<table class="sheet-sect sheet-center" style="width:99%;">
+							<tr>
+								<td><button class="sheet-button" type="roll" name="attr_attack-roll" title="%{selected|repeating_weapon_$X_attack-roll}" value="@{macro-hit}" >&nbsp;To-Hit&nbsp;</button></td>
+								<td colspan="2" style="width:11%;"><input type="text" class="sheet-input-large" name="attr_WeaponName" title="@{repeating_weapon_$X_WeaponName}" placeholder="Weapon" /><br>Name</td>
+								<td style="width:22%;" colspan="2">
+								<select name="attr_WeaponType" title="@{repeating_weapon_$X_WeaponType}" style="width:8em%; margin-left:20px;">
+									<option value="0" selected="">None</option>
+									<option value="Aklys">Aklys</option>
+									<option value="Battle">Axe, Battle</option>
+									<option value="Hand">Axe, Hand</option>
+									<option value="Bardiche">Axe, Great</option>
+									<option value="Bardiche">Bardiche</option>
+									<option value="Bec">Bec de Corbin</option>
+									<option value="Bill">Bill-Guisarme</option>
+									<option value="Bo">Bo Stick</option>
+									<option value="Caltrop">Caltrop</option>
+									<option value="Club">Club</option>
+									<option value="Dagger">Dagger</option>
+									<option value="Fauchard">Fauchard</option>
+									<option value="FFork">Fauchard-Fork</option>
+									<option value="Fist">Fist</option>
+									<option value="Footman">Flail, Footman's</option>
+									<option value="Horseman">Flail, Horseman's</option>
+									<option value="ForkM">Fork, Military</option>
+									<option value="Garrote">Garrote Wire</option>
+									<option value="Glaive">Glaive</option>
+									<option value="GlaiveG">Glaive-Guisarme</option>
+									<option value="Guisarme">Guisarme</option>
+									<option value="GuisarmeV">Guisarme-Voulge</option>
+									<option value="Halberd">Halberd</option>
+									<option value="Harpoon">Harpoon</option>
+									<option value="HammerL">Hammer, Lucern</option>
+									<option value="Hammer">Hammer</option>
+									<option value="Hook">Hook Fauchard</option>
+									<option value="Jo">Jo Stick</option>
+									<option value="Knife">Knife</option>
+									<option value="LanceL">Lance (light horse)</option>
+									<option value="LanceM">Lance (medium horse)</option>
+									<option value="LanceH">Lance (heavy horse)</option>
+									<option value="Lasso">Lasso</option>
+									<option value="MaceF">Mace, Footman's</option>
+									<option value="MaceH">Mace, Horseman's</option>
+									<option value="Man">Man Catcher</option>
+									<option value="Morning Star">Morning Star</option>
+									<option value="Partisan">Partisan</option>
+									<option value="PickF">Pick, Military, Footman's</option>
+									<option value="PickH">Pick, Military, Horseman's</option>
+									<option value="Pike">Pike Awl</option>
+									<option value="Ranseur">Ranseur</option>
+									<option value="Sap">Sap</option>
+									<option value="Scimitar">Scimitar</option>
+									<option value="SpearS">Spear, Short</option>
+									<option value="SpearL">Spear, Long</option>
+									<option value="Spetum">Spetum</option>
+									<option value="Buckler">Spiked Buckler</option>
+									<option value="Staff">Staff, Quarter</option>
+									<option value="SwordBa">Sword, Bastard</option>
+									<option value="SwordBr">Sword, Broad</option>
+									<option value="SwordF">Sword, Falchion</option>
+									<option value="SwordK">Sword, Khopesh</option>
+									<option value="SwordL">Sword, Long</option>
+									<option value="SwordS">Sword, Short</option>
+									<option value="SwordT">Sword, Two-handed</option>
+									<option value="Trident">Trident</option>
+									<option value="Voulge">Voulge</option>
+									<option value="Whip">Whip</option>
+								</select>
+								<br>Type</td>
+								<td colspan="2" style="width:11%;"><input type="text" class="sheet-input-small" name="attr_MagicBonus" title="@{repeating_weapon_$X_MagicBonus}" value="0" /><br>+Magic Bonus</td>
+								<td style="width:11%;"><input type="text" class="sheet-input-small" name="attr_ToHitBonus" title="@{repeating_weapon_$X_ToHitBonus}" value="0" /><br>To-Hit Misc</td>
+								<td style="width:11%;"><input type="text" class="sheet-input-small" name="attr_TotalHitBonus" title="@{repeating_weapon_$X_TotalHitBonus}" value="(@{meleebonus}+@{ToHitBonus}+@{MagicBonus})" disabled/><br>Total To Hit</td>
+								<td><input type="text" class="sheet-input-small" name="attr_quantity" title="@{repeating_weapon_$X_quantity}" min="0" value="1" /><br>Qty</td>
+
+								<td hidden><textarea name="attr_macro-hit" title="@{repeating_weapon_$X_macro-hit}" class="sheet-macro-text" style="width:96%; margin:5px 0 0 0;">&{template:attacks} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=@{WeaponName}}} {{attack1=[[1d20 + @{TotalHitBonus}[BON] ]]}} {{WeaponNotes=THAC0 = @{THAC00}, @{WeaponNotes}}}</textarea><br>Macro-Text</td>
+								<td hidden><textarea name="attr_macro-dmgsm" title="@{repeating_weapon_$X_macro-dmgsm}" class="sheet-macro-text" style="width:96%; margin:5px 0 0 0;">&{template:attacks} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=@{WeaponName}}} {{damage1vsSM=[[@{DamageSmallMedium} + @{TotalDamageBonus}[BON] ]]}} {{WeaponNotes=@{WeaponNotes}}} </textarea><br>Macro-Text</td>
+								<td hidden><textarea name="attr_macro-dmgl" title="@{repeating_weapon_$X_macro-dmgl}" class="sheet-macro-text" style="width:96%; margin:5px 0 0 0;">&{template:attacks} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=@{WeaponName}}} {{damage1vsL=[[@{DamageLarge} + @{TotalDamageBonus}[BON] ]]}} {{WeaponNotes=@{WeaponNotes}}} </textarea><br>Macro-Text</td>
+							</tr>
+							<tr>
+								<td><button class="sheet-button" type="roll" name="attr_damagesm-roll" title="%{selected|repeating_weapon_$X_damagesm-roll}" value="@{macro-dmgsm}" >&nbsp;Dmg S/M&nbsp;</button></td>
+								<td><input type="text" class="sheet-input-small" name="attr_DamageSmallMedium" title="@{repeating_weapon_$X_DamageSmallMedium} e.g. '1d4'" value="0" readonly="readonly"/><br>vs S/M</td>
+								<td><button class="sheet-button" type="roll" name="attr_damagel-roll" title="%{selected|repeating_weapon_$X_damagel-roll}" value="@{macro-dmgl}" >&nbsp;Dmg L&nbsp;</button></td>
+								<td><input type="text" class="sheet-input-small" name="attr_DamageLarge" title="@{repeating_weapon_$X_DamageLarge} e.g. '1d4+1'" value="0" readonly="readonly"/><br>vs L</td>
+								<td style="width:11%;"><input type="text" class="sheet-input-small" name="attr_DamageBonus" title="@{repeating_weapon_$X_DamageBonus}" value="0" /><br>Damage Misc</td>
+								<td style="width:11%;"><input type="text" class="sheet-input-small" name="attr_TotalDamageBonus" title="@{repeating_weapon_$X_TotalDamageBonus}" value="(@{DamageBonus} + @{MagicBonus} + @{dmgbonus})" disabled/><br>Total +Dmg</td>
+								<td><input type="text" class="sheet-input-small" name="attr_RateOfFire" title="@{repeating_weapon_$X_RateOfFire}" value="1" /><br>Blows</td>
+								<td><input type="text" class="sheet-input-small" name="attr_WeaponSpeed" title="@{repeating_weapon_$X_WeaponSpeed}" value="0" readonly="readonly"/><br>Speed</td>
+								<td colspan="3" ><textarea class="sheet-weapons" name="attr_WeaponNotes" title="@{repeating_weapon_$X_WeaponNotes}" style="width:80%; margin-left:20px" placeholder="Description"></textarea><br>Weapon Notes</td>
+							</tr>
+						</table>
+								<input type="hidden" name="attr_weapon_total_weight" value="0" />
+								<input type="hidden" name="attr_weapon_runningtotal" value="0" />
+					</div>
+					</fieldset>
+				</div>
+				<hr>
+			</div>
+
+			<div class="sheet-ranged">
+				<div class="sheet-header">RANGED WEAPONS</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{ranged-info-show}" name="attr_ranged-info-show" value="1" style="width: 115px; margin: 0 -20px 0 -85px;" checked="checked" /><span></span>
+
+				<div class="sheet-sect">
+					<fieldset class="repeating_ranged">
+					<div class="sheet-sect sheet-border">
+						<table class="sheet-sect sheet-center" style="width:99%;">
+							<tr>
+								<td><button class="sheet-button" type="roll" name="attr_attack-roll" title="%{selected|repeating_ranged_$X_attack-roll}" value="@{macro-hit}" >&nbsp;To-Hit&nbsp;</button></td>
+								<td colspan="2" style="width:11%;"><input type="text" class="sheet-input-large" name="attr_WeaponName" title="@{repeating_ranged_$X_WeaponName}" placeholder="Weapon" /><br>Name</td>
+								<td style="width:22%;" colspan="2">
+								<select name="attr_WeaponType" title="@{repeating_ranged_$X_WeaponType}" style="width:8em%; margin-left:20px;">
+									<option value="0" selected="">None</option>
+									<option value="Aklys">Aklys (hurled)</option>
+									<option value="Atlatl">Atlatl (javelin))</option>
+									<option value="Hand">Axe, Hand or Throwing</option>
+									<option value="Blowgun">Blowgun</option>
+									<option value="BowCL">Bow, Composite, Long</option>
+									<option value="BowCS">Bow, Composite, Short</option>
+									<option value="BowL">Bow, Long</option>
+									<option value="BowS">Bow, Short</option>
+									<option value="Club">Club (hurled)</option>
+									<option value="CBowHa">Crossbow, Hand</option>
+									<option value="CBowHe">Crossbow, Heavy</option>
+									<option value="CBowL">Crossbow, Light</option>
+									<option value="Dagger">Dagger (hurled)</option>
+									<option value="Dart">Dart</option>
+									<option value="Hammer">Hammer (hurled)</option>
+									<option value="Harpoon">Harpoon (hurled)</option>
+									<option value="Javelin">Javelin</option>
+									<option value="Knife">Knife (hurled)</option>
+									<option value="Lasso">Lasso</option>
+									<option value="SlingB">Sling (bullet)</option>
+									<option value="SlingS">Sling (stone)</option>
+									<option value="SpearS">Spear, Short (hurled)</option>
+									<option value="StaffSB">Staff Sling (bullet)</option>
+									<option value="StaffSS">Staff Sling (stone)</option>
+
+								</select>
+								<br>Type</td>
+								<td colspan="2" style="width:11%;"><input type="text" class="sheet-input-small" name="attr_MagicBonus" title="@{repeating_ranged_$X_MagicBonus}" value="0" /><br>+Magic Bonus</td>
+								<td style="width:11%;"><input type="text" class="sheet-input-small" name="attr_ToHitBonus" title="@{repeating_ranged_$X_ToHitBonus}" value="0" /><br>To-Hit Misc</td>
+								<td style="width:11%;"><input type="text" class="sheet-input-small" name="attr_TotalHitBonus" title="@{repeating_ranged_$X_TotalHitBonus}" value="(@{rangedbonus}+@{ToHitBonus}+@{MagicBonus})" disabled/><br>Total To Hit</td>
+								<td><input type="text" class="sheet-input-small" name="attr_quantity" title="@{repeating_ranged_$X_quantity}" min="0" value="1" /><br>Qty</td>
+									<td hidden>
+									<select name="attr_ranged_whisper_to-hit" style="width: 88%;height: 2em;margin: 4px 0 4px 0;">
+										<option value="&#x00A;/w gm &{template:attacks} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=To Hit Armor Class}} {{ToHitAC-10to0=[[ @{THAC-10} ]]|[[ @{THAC-9} ]]|[[ @{THAC-8} ]]|[[ @{THAC-7} ]]|[[ @{THAC-6} ]]|[[ @{THAC-5} ]]|[[ @{THAC-4} ]]|[[ @{THAC-3} ]]|[[ @{THAC-2} ]]|[[ @{THAC-1} ]]|[[ @{THAC0} ]]}} {{ToHitAC1to10=[[ @{THAC0} ]]|[[ @{THAC1} ]]|[[ @{THAC2} ]]|[[ @{THAC3} ]]|[[ @{THAC4} ]]|[[ @{THAC5} ]]|[[ @{THAC6} ]]|[[ @{THAC7} ]]|[[ @{THAC8} ]]|[[ @{THAC9} ]]|[[ @{THAC10} ]] }}" selected="">Table</option>
+										<option value="&#x00A;/w gm &{template:attacks} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=THACO}} {{ToHitAC-10to0=@{THAC0-10}|@{THAC0-9}|@{THAC0-8}|@{THAC0-7}|@{THAC0-6}|@{THAC0-5}|@{THAC0-4}|@{THAC0-3}|@{THAC0-2}|@{THAC0-1}|**@{THAC00}**}} {{ToHitAC1to10=**@{THAC00}**|@{THAC01}|@{THAC02}|@{THAC03}|@{THAC04}|@{THAC05}|@{THAC06}|@{THAC07}|@{THAC08}|@{THAC09}|@{THAC010} }}">THACO</option>
+										<option value="&nbsp;">no</option>
+									</select><br>
+									<b title="Include '/w gm to-hit AC table or THACO'?">/w gm?</b>
+								</td>
+								<td hidden><textarea name="attr_macro-hit" title="@{repeating_weapon_$X_macro-hit}" class="sheet-macro-text" style="width:96%; margin:5px 0 0 0;">&{template:attacks} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=@{WeaponName}}} {{attack1=[[1d20 + @{TotalHitBonus}[BON] ]]}} {{WeaponNotes=THAC0 = @{THAC00}, @{WeaponNotes}}}</textarea><br>Macro-Text</td>
+								<td hidden><textarea name="attr_macro-dmgsm" title="@{repeating_weapon_$X_macro-dmgsm}" class="sheet-macro-text" style="width:96%; margin:5px 0 0 0;">&{template:attacks} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=@{WeaponName}}} {{damage1vsSM=[[@{DamageSmallMedium} + @{TotalDamageBonus}[BON] ]]}} {{WeaponNotes=@{WeaponNotes}}} </textarea><br>Macro-Text</td>
+								<td hidden><textarea name="attr_macro-dmgl" title="@{repeating_weapon_$X_macro-dmgl}" class="sheet-macro-text" style="width:96%; margin:5px 0 0 0;">&{template:attacks} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=@{WeaponName}}} {{damage1vsL=[[@{DamageLarge} + @{TotalDamageBonus}[BON] ]]}} {{WeaponNotes=@{WeaponNotes}}} </textarea><br>Macro-Text</td>
+									</tr>
+							<tr>
+								<td><button class="sheet-button" type="roll" name="attr_damagesm-roll" title="%{selected|repeating_ranged_$X_damagesm-roll}" value="@{macro-dmgsm}" >&nbsp;Dmg S/M&nbsp;</button></td>
+								<td><input type="text" class="sheet-input-small" name="attr_DamageSmallMedium" title="@{repeating_ranged_$X_DamageSmallMedium} e.g. '1d4'" value="0" readonly="readonly"/><br>vs S/M</td>
+								<td><button class="sheet-button" type="roll" name="attr_damagel-roll" title="%{selected|repeating_ranged_$X_damagel-roll}" value="@{macro-dmgl}" >&nbsp;Dmg L&nbsp;</button></td>
+								<td><input type="text" class="sheet-input-small" name="attr_DamageLarge" title="@{repeating_ranged_$X_DamageLarge} e.g. '1d4+1'" value="0" readonly="readonly"/><br>vs L</td>
+								<td style="width:11%;"><input type="text" class="sheet-input-small" name="attr_DamageBonus" title="@{repeating_ranged_$X_DamageBonus}" value="0" /><br>Damage Misc</td>
+								<td style="width:11%;"><input type="text" class="sheet-input-small" name="attr_TotalDamageBonus" title="@{repeating_ranged_$X_TotalDamageBonus}" value="(@{DamageBonus} + @{MagicBonus})" disabled/><br>Total +Dmg</td>
+								<td><input type="text" class="sheet-input-small" name="attr_RateOfFire" title="@{repeating_ranged_$X_RateOfFire}" value="0" readonly="readonly"/><br>Rate of Fire</td>
+								<td><input type="text" class="sheet-input-medium" name="attr_Range" title="@{repeating_ranged_$X_Range}" value="0/0/0" readonly="readonly"/><br>Range S/M/L</td>
+								<td colspan="3"><textarea class="sheet-weapons" name="attr_WeaponNotes" title="@{repeating_ranged_$X_WeaponNotes}" style="width:96%;" placeholder="Description"></textarea><br>Weapon Notes</td>
+							</tr>
+						</table>
+								<input type="hidden" name="attr_weapon_total_weight" value="0" />
+								<input type="hidden" name="attr_weapon_runningtotal" value="0" />
+					</div>
+					</fieldset>
+				</div>
+				<hr>
+			</div>
+
+			<div class="sheet-to_hit_AC" hidden>
+				<div class="sheet-header">TO HIT AC TABLE</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{to_hit_ac-info-show} Use the To Hit tables from the DMG to input values." name="attr_to_hit_ac-info-show" value="1" style="width: 170px;margin: 0 -20px 0 -140px;" checked="checked" /><span></span>
+				<table class="sheet-sect sheet-center">
+					<tr class="sheet-to-hit">
+						<td>-10</td>
+						<td>-9</td>
+						<td>-8</td>
+						<td>-7</td>
+						<td>-6</td>
+						<td>-5</td>
+						<td>-4</td>
+						<td>-3</td>
+						<td>-2</td>
+						<td>-1</td>
+						<td>0</td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+						<td>6</td>
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+						<td>10</td>
+					</tr>
+					<tr class="sheet-to-hit-input">
+						<td><input type="text" name="attr_THAC-10" title="@{THAC-10}" value="10" /></td>
+						<td><input type="text" name="attr_THAC-9" title="@{THAC-9}" value="10" /></td>
+						<td><input type="text" name="attr_THAC-8" title="@{THAC-8}" value="10" /></td>
+						<td><input type="text" name="attr_THAC-7" title="@{THAC-7}" value="10" /></td>
+						<td><input type="text" name="attr_THAC-6" title="@{THAC-6}" value="10" /></td>
+						<td><input type="text" name="attr_THAC-5" title="@{THAC-5}" value="10" /></td>
+						<td><input type="text" name="attr_THAC-4" title="@{THAC-4}" value="10" /></td>
+						<td><input type="text" name="attr_THAC-3" title="@{THAC-3}" value="10" /></td>
+						<td><input type="text" name="attr_THAC-2" title="@{THAC-2}" value="10" /></td>
+						<td><input type="text" name="attr_THAC-1" title="@{THAC-1}" value="10" /></td>
+						<td><input type="text" name="attr_THAC0" title="@{THAC0}" value="10" /></td>
+						<td><input type="text" name="attr_THAC1" title="@{THAC1}" value="10" /></td>
+						<td><input type="text" name="attr_THAC2" title="@{THAC2}" value="10" /></td>
+						<td><input type="text" name="attr_THAC3" title="@{THAC3}" value="10" /></td>
+						<td><input type="text" name="attr_THAC4" title="@{THAC4}" value="10" /></td>
+						<td><input type="text" name="attr_THAC5" title="@{THAC5}" value="10" /></td>
+						<td><input type="text" name="attr_THAC6" title="@{THAC6}" value="10" /></td>
+						<td><input type="text" name="attr_THAC7" title="@{THAC7}" value="10" /></td>
+						<td><input type="text" name="attr_THAC8" title="@{THAC8}" value="10" /></td>
+						<td><input type="text" name="attr_THAC9" title="@{THAC9}" value="10" /></td>
+						<td><input type="text" name="attr_THAC10" title="@{THAC10}" value="10" /></td>
+					</tr>
+				</table>
+				<hr>
+			</div>
+			<div class="sheet-thac0">
+				<div class="sheet-header">THAC0</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{thac0-show} enter THAC0 to auto-calc table (values are not based off of the To Hit tables from the DMG)" name="attr_thac0-show" value="1" style="width: 90px;margin: 0 -20px 0 -60px;" checked="checked" /><span></span>
+				<table class="sheet-sect sheet-center">
+					<tr class="sheet-to-hit">
+						<td>-10</td>
+						<td>-9</td>
+						<td>-8</td>
+						<td>-7</td>
+						<td>-6</td>
+						<td>-5</td>
+						<td>-4</td>
+						<td>-3</td>
+						<td>-2</td>
+						<td>-1</td>
+						<td>0</td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+						<td>6</td>
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+						<td>10</td>
+					</tr>
+					<tr class="sheet-to-hit-input">
+						<td><input type="text" name="attr_THAC0neg10" title="@{THAC0neg10}" value="0" min="2" max="20" readonly /></td>
+						<td><input type="text" name="attr_THAC0neg9" title="@{THAC0neg9}" value="0" min="2" max="20" readonly /></td>
+						<td><input type="text" name="attr_THAC0neg8" title="@{THAC0neg8}" value="0" min="2" max="20" readonly /></td>
+						<td><input type="text" name="attr_THAC0neg7" title="@{THAC0neg7}" value="0" min="2" max="20" readonly /></td>
+						<td><input type="text" name="attr_THAC0neg6" title="@{THAC0neg6}" value="0" min="2" max="20" readonly /></td>
+						<td><input type="text" name="attr_THAC0neg5" title="@{THAC0neg5}" value="0" min="2" max="20" readonly /></td>
+						<td><input type="text" name="attr_THAC0neg4" title="@{THAC0neg4}" value="0" min="2" max="20" readonly /></td>
+						<td><input type="text" name="attr_THAC0neg3" title="@{THAC0neg3}" value="0" min="2" max="20" readonly /></td>
+						<td><input type="text" name="attr_THAC0neg2" title="@{THAC0neg2}" value="0" min="2" max="20" readonly /></td>
+						<td><input type="text" name="attr_THAC0neg1" title="@{THAC0neg1}" value="0" min="2" max="20" readonly /></td>
+						<td><input type="text" name="attr_THAC00" title="@{THAC00}" value="20" style="font-weight:bold; border: 1px solid black;" /></td>
+						<td><input type="text" name="attr_THAC01" title="@{THAC01}" value="@{THAC00}-1" min="2" max="20" disabled /></td>
+						<td><input type="text" name="attr_THAC02" title="@{THAC02}" value="@{THAC00}-2" min="2" max="20" disabled /></td>
+						<td><input type="text" name="attr_THAC03" title="@{THAC03}" value="@{THAC00}-3" min="2" max="20" disabled /></td>
+						<td><input type="text" name="attr_THAC04" title="@{THAC04}" value="@{THAC00}-4" min="2" max="20" disabled /></td>
+						<td><input type="text" name="attr_THAC05" title="@{THAC05}" value="@{THAC00}-5" min="2" max="20" disabled /></td>
+						<td><input type="text" name="attr_THAC06" title="@{THAC06}" value="@{THAC00}-6" min="2" max="20" disabled /></td>
+						<td><input type="text" name="attr_THAC07" title="@{THAC07}" value="@{THAC00}-7" min="2" max="20" disabled /></td>
+						<td><input type="text" name="attr_THAC08" title="@{THAC08}" value="@{THAC00}-8" min="2" max="20" disabled /></td>
+						<td><input type="text" name="attr_THAC09" title="@{THAC09}" value="@{THAC00}-9" min="2" max="20" disabled /></td>
+						<td><input type="text" name="attr_THAC010" title="@{THAC010}" value="@{THAC00}-10" min="2" max="20" disabled /></td>
+					</tr>
+				</table>
+				<hr>
+			</div>
+			<div class="sheet-thief_skills">
+				<div class="sheet-header">THIEF SKILLS</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{thief_skills-info-show}" name="attr_thief_skills-info-show" value="1" style="width: 135px; margin: 0 -20px 0 -105px;" /><span></span>
+				<table class="sheet-sect">
+					<tr class="sheet-sect sheet-center">
+						<td colspan="2"></td>
+						<td colspan="1">Stats</td>
+						<td colspan="1">Armor</td>
+						<td colspan="1">Class</td>
+						<td colspan="1">Other</td>
+						<td colspan="1">Total</td>
+						<td colspan="2"></td>
+						<td colspan="1">Stats</td>
+						<td colspan="1">Armor</td>
+						<td colspan="1">Class</td>
+						<td colspan="1">Other</td>
+						<td colspan="1">Total</td>
+						<td colspan="2"></td>
+						<td colspan="1">Armor</td>
+						<td colspan="1">Class</td>
+						<td colspan="1">Other</td>
+						<td colspan="1">Total</td>
+						<td colspan="1"></td>
+					</tr>
+
+					<tr>
+						<td style="text-align: right;">Steal</td>
+						<td class="sheet-right"><button class="sheet-button" type="roll" name="roll_pickpockets" title="%{selected|pickpockets}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Ability Check}} {{Pick Pockets=[[1d100cs<@{PickPockets_total}cf>@{pickpockets_total}]] %}}"> Roll</button></td>
+						<td style="width: 47px;"><input type="text" name="attr_pickpockets" class="sheet-input-small" title="@{pickpockets}" value="0" readonly="readonly"/></td>
+						<td style="width: 47px;"><input type="text" name="attr_pickpockets_armor" class="sheet-input-small" title="@{pickpockets_armor}" value="0" readonly="readonly"/></td>
+						<td style="width: 47px;"><input type="text" name="attr_pickpockets_misc" class="sheet-input-small" title="@{pickpockets_misc}" value="0"/></td>
+						<td style="width: 47px;"><input type="text" name="attr_pickpockets_race" class="sheet-input-small" title="@{pickpockets_race}" value="0"/></td>
+						<td style="width: 47px;"><input type="text" name="attr_pickpockets_total" class="sheet-input-small" title="@{pickpockets_total}" value="0" readonly="readonly"/></td>
+
+						<td style="text-align: right;">Move Silently</td>
+						<td class="sheet-right"><button class="sheet-button" type="roll" name="roll_movequietly" title="%{selected|movequietly}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Ability Check}} {{Move Quietly=[[1d100cs<@{movequietly_total}cf>@{movequietly_total}]] %}}"> Roll</button></td>
+						<td style="width: 47px;"><input type="text" name="attr_movequietly" class="sheet-input-small" title="@{movequietly}" value="0" readonly="readonly"/></td>
+						<td style="width: 47px;"><input type="text" name="attr_movequietly_armor" class="sheet-input-small" title="@{movequietly_armor}" value="0" readonly="readonly"/></td>
+						<td style="width: 47px;"><input type="text" name="attr_movequietly_misc" class="sheet-input-small" title="@{movequietly_misc}" value="0"/></td>
+						<td style="width: 47px;"><input type="text" name="attr_movequietly_race" class="sheet-input-small" title="@{movequietly_race}" value="0"/></td>
+						<td style="width: 47px;"><input type="text" name="attr_movequietly_total" class="sheet-input-small" title="@{movequietly_total}" value="0" readonly="readonly"/></td>
+
+						<td style="text-align: right;">Climb Walls</td>
+						<td class="sheet-right"><button class="sheet-button" type="roll" name="roll_climbwalls" title="%{selected|climbwalls}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Ability Check}} {{Climb Walls=[[1d100cs<@{climbwalls_total}cf>@{climbwalls_total}]] %}}"> Roll</button></td>
+						<!--<td style="width: 47px;"><input type="text" name="attr_climbwalls" class="sheet-input-small" title="@{climbwalls}" value="N/A" readonly="readonly"/></td>-->
+						<td style="width: 47px;"><input type="text" name="attr_climbwalls_armor" class="sheet-input-small" title="@{climbwalls_armor}" value="0" readonly="readonly"/></td>
+						<td style="width: 47px;"><input type="text" name="attr_climbwalls_misc" class="sheet-input-small" title="@{climbwalls_misc}" value="0"/></td>
+						<td style="width: 47px;"><input type="text" name="attr_climbwalls_race" class="sheet-input-small" title="@{climbwalls_race}" value="0"/></td>
+						<td style="width: 47px;"><input type="text" name="attr_climbwalls_total" class="sheet-input-small" title="@{climbwalls_total}" value="0" readonly="readonly"/></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;">Locks</td>
+						<td class="sheet-right"><button class="sheet-button" type="roll" name="roll_openlocks" title="%{selected|openlocks}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Ability Check}} {{Open Locks=[[1d100cs<@{openlocks_total}cf>@{openlocks_total}]] %}}"> Roll</button></td>
+						<td><input type="text" name="attr_openlocks" class="sheet-input-small" title="@{openlocks}" value="0"readonly="readonly" /></td>
+						<td><input type="text" name="attr_openlocks_armor" class="sheet-input-small" title="@{openlocks_armor}" value="0"readonly="readonly" /></td>
+						<td><input type="text" name="attr_openlocks_misc" class="sheet-input-small" title="@{openlocks_misc}" value="0"/></td>
+						<td><input type="text" name="attr_openlocks_race" class="sheet-input-small" title="@{openlocks_race}" value="0"/></td>
+						<td><input type="text" name="attr_openlocks_total" class="sheet-input-small" title="@{openlocks_total}" value="0" readonly="readonly"/></td>
+
+						<td style="text-align: right;">Hide</td>
+						<td class="sheet-right"><button class="sheet-button" type="roll" name="roll_hideinshadows" title="%{selected|HideInShadows}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Ability Check}} {{Hide In Shadows=[[1d100cs<@{hideinshadows_total}cf>@{hideinshadows_total}]] %}}"> Roll</button></td>
+						<td><input type="text" name="attr_hideinshadows" class="sheet-input-small" title="@{hideinshadows}" value="0" readonly="readonly"/></td>
+						<td><input type="text" name="attr_hideinshadows_armor" class="sheet-input-small" title="@{hideinshadows_armor}" value="0" readonly="readonly"/></td>
+						<td><input type="text" name="attr_hideinshadows_misc" class="sheet-input-small" title="@{hideinshadows_misc}" value="0"/></td>
+						<td><input type="text" name="attr_hideinshadows_race" class="sheet-input-small" title="@{hideinshadows_race}" value="0"/></td>
+						<td><input type="text" name="attr_hideinshadows_total" class="sheet-input-small" title="@{hideinshadows_total}" value="0" readonly="readonly"/></td>
+
+						<td style="text-align: right;">Read Lang</td>
+						<td class="sheet-right"><button class="sheet-button" type="roll" name="roll_readlanguages" title="%{selected|readlanguages}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Ability Check}} {{Read Languages=[[1d100cs<@{readlanguages_total}cf>@{readlanguages_total}]] %}}"> Roll</button></td>
+						<!--<td><input type="text" name="attr_readlanguages" class="sheet-input-small" title="@{readlanguages}" value="N/A" readonly="readonly"/></td>-->
+						<td><input type="text" name="attr_readlanguages" class="sheet-input-small" title="@{readlanguages}" value="N/A" readonly="readonly"/></td>
+						<td><input type="text" name="attr_readlanguages_misc" class="sheet-input-small" title="@{readlanguages_misc}" value="0"/></td>
+						<td><input type="text" name="attr_readlanguages_race" class="sheet-input-small" title="@{readlanguages_race}" value="0"/></td>
+						<td><input type="text" name="attr_readlanguages_total" class="sheet-input-small" title="@{readlanguages_total}" value="0" readonly="readonly"/></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;">Traps</td>
+						<td class="sheet-right"><button class="sheet-button" type="roll" name="roll_findtraps" title="%{selected|findtraps}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Ability Check}} {{Find/Remove Traps=[[1d100cs<@{FindTraps_total}cf>@{FindTraps_total}]] %}}"> Roll</button></td>
+						<td><input type="text" name="attr_findtraps" class="sheet-input-small" title="@{findtraps}" value="0" readonly="readonly"/></td>
+						<td><input type="text" name="attr_findtraps_armor" class="sheet-input-small" title="@{findtraps_armor}" value="0" readonly="readonly"/></td>
+						<td><input type="text" name="attr_findtraps_misc" class="sheet-input-small" title="@{findtraps_misc}" value="0"/></td>
+						<td><input type="text" name="attr_findtraps_race" class="sheet-input-small" title="@{findtraps_race}" value="0"/></td>
+						<td><input type="text" name="attr_findtraps_total" class="sheet-input-small" title="@{findtraps_total}" value="0" readonly="readonly"/></td>
+
+			   		<td style="text-align: right;">Hear Noise</td>
+						<td class="sheet-right"><button class="sheet-button" type="roll" name="roll_hearnoise" title="%{selected|hearnoise}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Ability Check}} {{Hear Noise=[[1d100cs<@{hearnoise_total}cf>@{hearnoise_total}]] %}}"> Roll</button></td>
+						<td><input type="text" name="attr_hearnoise" class="sheet-input-small" title="@{hearnoise}" value="N/A" readonly="readonly"/></td>
+						<td><input type="text" name="attr_hearnoise_armor" class="sheet-input-small" title="@{hearnoise_armor}" value="N/A" readonly="readonly"/></td>
+						<td><input type="text" name="attr_hearnoise_misc" class="sheet-input-small" title="@{hearnoise_misc}" value="0"/></td>
+						<td><input type="text" name="attr_hearnoise_race" class="sheet-input-small" title="@{hearnoise_race}" value="0"/></td>
+						<td><input type="text" name="attr_hearnoise_total" class="sheet-input-small" title="@{hearnoise_total}" value="0" readonly="readonly"/></td>
+
+						<td style="text-align: right;">Backstab</td>
+						<td></td>
+						<!--<td><input type="text" name="attr_backstab" class="sheet-input-small" title="@{backstab}" value="N/A" min="2" max="5" readonly="readonly"/></td>-->
+						<td><input type="text" name="attr_backstab_armor" class="sheet-input-small" title="@{backstab_armor}" value="N/A" min="2" max="5" readonly="readonly"/></td>
+						<td><input type="text" name="attr_backstab_misc" class="sheet-input-small" title="@{backstab_misc}" value="2" min="2" max="5" /></td>
+					</tr>
+				</table>
+
+				<hr>
+			</div>
+
+			<div class="sheet-wealth">
+				<div class="sheet-header">WEALTH</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{wealth-info-show}" name="attr_wealth-info-show" value="1" style="width: 100px; margin: 0 -20px 0 -70px;" /><span></span>
+				<div class="sheet-sect">
+					<table class="sheet-sect sheet-center">
+
+
+<td class="sheet-right"</td>
+
+						<tr>
+							<td colspan="1"/>
+							<td>PP<span class="sheet-text-small">(GPx5)</span>:</td>
+							<td>GP<span class="sheet-text-small">(base)</span>:</td>
+							<td>EP<span class="sheet-text-small">(GP/2)</span>:</td>
+							<td>SP<span class="sheet-text-small">(GP/20)</span>:</td>
+							<td>CP<span class="sheet-text-small">(GP/200)</span>:</td>
+						</tr>
+
+						<tr>
+							<td style="width:20%;"><b class="sheet-text-large">Carried Coins:</b></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_pp" title="@{pp}" min="0" value="0" /></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_gp" title="@{gp}" min="0" value="0" /></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_ep" title="@{ep}" min="0" value="0" /></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_sp" title="@{sp}" min="0" value="0" /></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_cp" title="@{cp}" min="0" value="0" /></td>
+						</tr>
+						<tr>
+							<td style="width:20%;"><b class="sheet-text-large">Non-Carried Coins:</b></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_pp_non" title="@{pp_non}" min="0" value="0" /></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_gp_non" title="@{gp_non}" min="0" value="0" /></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_ep_non" title="@{ep_non}" min="0" value="0" /></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_sp_non" title="@{sp_non}" min="0" value="0" /></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_cp_non" title="@{cp_non}" min="0" value="0" /></td>
+						</tr>
+						<tr>
+							<td style="width:20%;"><b class="sheet-text-large">Total Coins:</b></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_pp_total" title="@{pp_total}" min="0" value="0" readonly="readonly"/></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_gp_total" title="@{gp_total}" min="0" value="0" readonly="readonly"/></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_ep_total" title="@{ep_total}" min="0" value="0" readonly="readonly"/></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_sp_total" title="@{sp_total}" min="0" value="0" readonly="readonly"/></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_cp_total" title="@{cp_total}" min="0" value="0" readonly="readonly"/></td>
+						</tr>
+						<tr>
+							<td style="width:20%;"><b class="sheet-text-large">Value in GP:</b></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_pp_value" title="@{pp_value}" min="0" value="0" readonly="readonly"/></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_gp_value" title="@{gp_value}" min="0" value="0" readonly="readonly"/></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_ep_value" title="@{ep_value}" min="0" value="0" readonly="readonly"/></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_sp_value" title="@{sp_value}" min="0" value="0" readonly="readonly"/></td>
+							<td style="width:15%;"><input type="text" class="sheet-input-medium" name="attr_cp_value" title="@{cp_value}" min="0" value="0" readonly="readonly"/></td>
+						</tr>
+					</table>
+					<div class="sheet-table">
+						<b style="margin-left:20px;">Wealth Notes</b>
+						<input type="checkbox" class="sheet-sect-show" title="@{wealthnotes-show}" name="attr_wealthnotes-show" value="1" style="width: 115px; margin: 0 -20px 0 -90px;" checked="checked" /><span></span>
+						<div class="sheet-table-row sheet-sect">
+							<textarea name="attr_wealthNotes" title="@{wealthNotes}" placeholder="Wealth Notes"></textarea>
+						</div>
+					</div>
+				</div>
+				<hr>
+			</div>
+			<div class="sheet-equipment">
+				<div class="sheet-header">EQUIPMENT</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{equipment-info-show}" name="attr_equipment-info-show" value="1" style="width: 125px; margin: 0 -20px 0 -95px;" /><span></span>
+					<div class="sheet-table sheet-sect sheet-repeating-fields">
+						<table class="sheet-sect sheet-center">
+							<tr>
+								<td style="width:4%;"></td>
+								<td style="width:38%;">Item/Description</td>
+								<td style="width:20%;">Location</td>
+								<td style="width:7%;">Carried?</td>
+								<td style="width:7%;">Qty</td>
+								<td style="width:1%;">/</td>
+								<td style="width:7%;">Max</td>
+								<td style="width:7%;">Wt</td>
+								<td style="width:10%;">Value</td>
+							</tr>
+						</table>
+						<div class="sheet-sect">
+							<fieldset class="repeating_equipment">
+								<table class="sheet-sect sheet-center">
+									<tr>
+										<td style="width:4%;"><input type="checkbox" class="sheet-counted sheet-sect-show" title="@{repeating_equipment_$X_item-show}" name="attr_item-show" value="1" style="opacity:0; position:absolute; cursor:default; z-index: 1; width:0;" checked="checked" /><span></span></td>
+										<td style="width:38%;"><input type="text" name="attr_item" title="@{repeating_equipment_$X_item}" placeholder="Item/Description" /></td>
+										<td style="width:20%;"><input type="text" name="attr_location" title="@{repeating_equipment_$X_location}" placeholder="Location" /></td>
+										<td style="width:7%;"><input type="checkbox" name="attr_carried" checked="checked" title="@{repeating_equipment_$X_carried}" value="1" /></td>
+										<td style="width:7%;"><input type="text" name="attr_quantity" title="@{repeating_equipment_$X_quantity}" min="0" value="1" /></td>
+										<td style="width:1%;">/</td>
+										<td style="width:7%;"><input type="text" name="attr_quantity_max" title="@{repeating_equipment_$X_quantity|max}" value="1" /></td>
+										<td style="width:7%;"><input type="text" name="attr_weight" title="@{repeating_equipment_$X_weight}" value="0" /></td>
+										<td style="width:10%;"><input type="text" name="attr_cost" title="@{repeating_equipment_$X_cost}" value="0" /></td>
+									</tr>
+								</table>
+										<input type="hidden" name="attr_equipment_total_weight" value="0" />
+										<input type="hidden" name="attr_equipment_runningtotal" value="0" />
+							</fieldset>
+						</div>
+						<table class="sheet-sect">
+							<tr>
+								<td rowspan="5" style="width:74%; vertical-align:top;">
+									<div class="sheet-table sheet-left">
+										<b style="margin-left:20px;">Equipment Notes</b>
+									<input type="checkbox" class="sheet-sect-show" title="@{itemnotes-show}" name="attr_itemnotes-show" value="1" style="width: 135px; margin: 0 -20px 0 -105px;" checked="checked" /><span></span>
+										<div class="sheet-table-row sheet-sect">
+										<textarea name="attr_itemnotes" title="@{itemnotes}" placeholder="Equipment Notes"></textarea>
+										</div>
+									</div>
+									<table class="sheet-sect sheet-center">
+										<tr>
+											<td><b class="sheet-text-large">Carrying Capacity:</b></td>
+											<td><input type="text" class="sheet-input-medium" name="attr_normal_load" title="@{normal_load} Enter the maximum amount for a 'Normal load'(default 350gp based on STR 8-11. Add STR bonus if applicable.)" value="(@{encumbrancebonus})" disabled /><br>Normal&nbsp;
+											<input type="checkbox" name="attr_current_encumbrance" value="1" checked="checked" readonly="readonly" /></td>
+											<td><input type="text" class="sheet-input-medium" name="attr_heavy_load" title="@{heavy_load} Enter the maximum amount for a 'Heavy load'(default 700gp based on STR 8-11. Add STR bonus if applicable.)" value="(@{encumbrancebonus}*2)" disabled /><br>Encumbered&nbsp;
+											<input type="checkbox" name="attr_current_encumbrance" value=".749" readonly="readonly" /></td>
+											<td><input type="text" class="sheet-input-medium" name="attr_very_heavy_load" title="@{very_heavy_load} Enter the maximum amount for a 'Very heavy load'(default 1050gp based on STR 8-11. Add STR bonus if applicable.)" value="(@{encumbrancebonus}*3)" disabled /><br>Heavy Enc&nbsp;
+											<input type="checkbox" name="attr_current_encumbrance" value=".5" readonly="readonly" /></td>
+											<td><input type="text" class="sheet-input-medium" name="attr_max_load" title="@{max_load} Minimum amount for a max/encumbered load(defaults to 'Very heavy load' + 1)." value="(@{encumbrancebonus}*3+1)" disabled /><b class="sheet-text-large">+</b><br>Max&nbsp;
+											<input type="checkbox" name="attr_current_encumbrance" value=".25" readonly="readonly" /></td>
+										</tr>
+										<tr>
+											<td colspan="2" class="sheet-right">Armor Encumbrance:</td>
+											<td><input type="text" class="sheet-input-medium" name="attr_armor_enc" title="@{armor_enc}" value="None" readonly="readonly" /><br>
+											<td class="sheet-right">Shield Encumbrance:</td>
+											<td><input type="text" class="sheet-input-medium" name="attr_shield_enc" title="@{shield_enc}" value="None" readonly="readonly" /><br>
+										</tr>
+										<tr>
+											<td colspan="2" class="sheet-right">Total Encumbrance: <br> <span class="sheet-text-small">(use worse of this or carried)</span></td>
+											<td><input type="text" class="sheet-input-medium" name="attr_total_enc" title="@{total_enc}" value="None" readonly="readonly" /><br>
+											<td class="sheet-right">Encumbrance Penalty:</td>
+											<td><input type="text" class="sheet-input-medium" name="attr_penalty_enc" title="@{penalty_enc}" value="None" readonly="readonly" /><br>
+
+										</tr>
+
+									</table>
+								</td>
+								<td style="width:10%;" class="sheet-right">Equipment:</td>
+								<td style="width:7%;"><input type="text" style="width:100%;" name="attr_total_equipment_weight" title="@{total_equipment_weight}" value="0" readonly="readonly" /></td>
+								<td style="width:10%;"><input type="text" style="width:100%;" name="attr_total_equipment_cost" title="@{total_equipment_cost}" value="0" readonly="readonly" /></td>
+							</tr>
+							<tr hidden>
+								<td class="sheet-right">Armor:</td>
+								<td><input type="text" style="width:100%;" name="attr_total_armor_weight" title="@{total_armor_weight}" value="0" readonly="readonly" /></td>
+								<td><input type="text" style="width:100%;" name="attr_total_armor_cost" title="@{total_armor_cost}" value="0" readonly="readonly" /></td>
+							</tr>
+							<tr hidden>
+								<td class="sheet-right">Weapons:</td>
+								<td><input type="text" style="width:100%;" name="attr_total_weapon_weight" title="@{total_weapon_weight}" value="0" readonly="readonly" /></td>
+								<td><input type="text" style="width:100%;" name="attr_total_weapon_cost" title="@{total_weapon_cost}" value="0" readonly="readonly" /></td>
+							</tr>
+							<tr>
+								<td class="sheet-right">Coins:</td>
+								<td><input type="text" style="width:100%;" name="attr_total_coin_weight" title="@{total_coin_weight}" value="0" readonly="readonly" /></td>
+								<td><input type="text" style="width:100%;" name="attr_total_coin_cost" title="@{total_coin_cost}" value="0" readonly="readonly" /></td>
+							</tr>
+							<tr>
+								<td class="sheet-right">TOTALS:</td>
+								<td><input type="text" style="width:100%;" name="attr_total_weight" title="@{total_weight}" value="0" readonly="readonly" /></td>
+								<td><input type="text" style="width:100%;" name="attr_total_cost" title="@{total_cost}" value="0" readonly="readonly" /></td>
+							</tr>
+
+						</table>
+
+
+					</div>
+				<hr>
+			</div>
+
+			<div class="sheet-magic_items" hidden>
+				<div class="sheet-header">MAGIC ITEMS</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{magic_items-info-show}" name="attr_magic_items-info-show" value="1" style="width: 180px; margin: 0 -20px 0 -150px;" /><span></span>
+				<div class="sheet-sect">
+					<fieldset class="repeating_magic_items">
+						<div class="sheet-sect sheet-border">
+							<table class="sheet-sect sheet-center" style="width:99%;">
+								<tr>
+									<td style="width:5%;"><button class="sheet-button" type="roll" name="attr_roll" title="%{repeating_magic_items_$X_roll}" value="@{macro-text}"></button></td>
+									<td style="width:22%;"><input type="text" name="attr_name" title="@{repeating_magic_items_$X_name}" placeholder="Ability Name" /><br>Name</td>
+									<td style="width:10%;" type="hidden"><textarea name="attr_macro-text" title="@{repeating_magic_items_$X_macro-text}" class="sheet-macro-text" style="width:90%; height:1em;" >&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Magic Item: @{name}}} {{=@{description}}}</textarea><br>Macro-Text</td>
+								</tr>
+							</table>
+							<b style="margin-left:20px;">Item Description</b>
+							<input type="checkbox" class="sheet-sect-show" title="@{repeating_magic_items_$X_description-show}" name="attr_description-show" value="1" style="opacity: 0;width: 160px;height: 20px;position: relative;top: 0;left: 0;margin: 0 -20px 0 -135px; cursor: pointer; z-index: 1" /><span></span>
+							<div class="sheet-table sheet-sect">
+								<div class="sheet-table-row sheet-center sheet-sect">
+									<textarea name="attr_description" title="@{repeating_magic_items_$X_description}" placeholder="Item Description"></textarea>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<hr>
+			</div>
+
+			<div class="sheet-special_abilities">
+				<div class="sheet-header">SPECIAL ABILITIES</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{special_abilities-info-show}" name="attr_special_abilities-info-show" value="1" style="width: 180px; margin: 0 -20px 0 -150px;" /><span></span>
+				<div class="sheet-sect">
+					<fieldset class="repeating_ability">
+						<div class="sheet-sect sheet-border">
+							<table class="sheet-sect sheet-center" style="width:99%;">
+								<tr>
+									<td style="width:5%;"><button class="sheet-button" type="roll" name="attr_roll" title="%{repeating_ability_$X_roll}" value="@{macro-text}"></button></td>
+									<td style="width:22%;"><input type="text" name="attr_name" title="@{repeating_ability_$X_name}" placeholder="Ability Name" /><br>Name</td>
+									<td style="width:44%;"><textarea name="attr_short_description" title="@{repeating_ability_$X_short_description}" class="sheet-weapons" style="width:100%;" placeholder="Short Description"></textarea><br>Short Description</td>
+									<td style="width:8%;"><input type="text" name="attr_current" title="@{repeating_ability_$X_current}" value="0" class="sheet-input-small" /><br>Cur</td>
+									<td style="width:1%;">/<br>/</td>
+									<td style="width:8%;"><input type="text" name="attr_current_max" title="@{repeating_ability_$X_current|max}" value="0" class="sheet-input-small" /><br>Max</td>
+									<!--attr_max kept as hidden attribute in order migrate attribute data to-->
+									<input type="hidden" name="attr_max" value="1">
+									<td style="width:10%;"><textarea name="attr_macro-text" title="@{repeating_ability_$X_macro-text}" class="sheet-macro-text" style="width:90%; height:1em;" >&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Special Ability: @{name}}} {{=@{short_description}}}</textarea><br>Macro-Text</td>
+								</tr>
+							</table>
+							<b style="margin-left:20px;">Ability Description</b>
+							<input type="checkbox" class="sheet-sect-show" title="@{repeating_ability_$X_description-show}" name="attr_description-show" value="1" style="opacity: 0;width: 160px;height: 20px;position: relative;top: 0;left: 0;margin: 0 -20px 0 -135px; cursor: pointer; z-index: 1" /><span></span>
+							<div class="sheet-table sheet-sect">
+								<div class="sheet-table-row sheet-center sheet-sect">
+									<textarea name="attr_description" title="@{repeating_ability_$X_description}" placeholder="Ability Description"></textarea>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<div class="sheet-table">
+						<b style="margin-left:20px;">Special Abilities Notes</b>
+						<input type="checkbox" class="sheet-sect-show" title="@{special_abilitiesnotes-show}" name="attr_special_abilitiesnotes-show" value="1" style="width: 180px; margin: 0 -20px 0 -150px;" /><span></span>
+						<div class="sheet-table-row sheet-sect">
+							<textarea name="attr_special_abilitiesnotes" title="@{special_abilitiesnotes}" placeholder="Special Abilities Notes"></textarea>
+						</div>
+					</div>
+				</div>
+				<hr>
+			</div>
+
+			<div class="sheet-wizard">
+				<div class="sheet-header">WIZARD SPELLS PER DAY</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{wizard-info-show}" name="attr_wizard-info-show" value="1" style="width: 90px; margin: 0 -20px 0 -60px;" /><span></span>
+				<div class="sheet-sect">
+					<br>
+					<table class="sheet-sect sheet-center">
+						<tr>
+							<td colspan="6">Max&nbsp;Arcane&nbsp;Spell&nbsp;Level&nbsp;(Int)</td>
+							<td colspan="6">Know&nbsp;Spell&nbsp;%&nbsp;(Int)</td>
+							<td colspan="6">Min/Max&nbsp;Spells&nbsp;per&nbsp;Level&nbsp;(Int)</td>
+						</tr>
+
+						<tr>
+							<td style="width: 47px;" colspan="6"><input style="margin-bottom:20px;" type="text" class="sheet-input-small" name="attr_maxspelllevel" title="@{maxspelllevel}" placeholder="0" readonly="readonly"/></td>
+
+							<td class="sheet-input-small" colspan="6"><button class="sheet-button" type="roll" name="attr_knowspell-roll" title="%{selected|knowspell-roll}" style="margin-bottom:20px;" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Chance to Know Spell}} {{Roll=[[1d100cs<@{KnowSpell}cf>@{KnowSpell}]] %}}"> Roll</button>
+							<input type="text" class="sheet-input-small" name="attr_knowspell" title="@{knowspell}" value="0" style="margin-bottom:20px;" readonly="readonly" /></td>
+
+							<td colspan="6" style="width: 47px;"><input style="margin-bottom:20px;" type="text" class="sheet-input-small" name="attr_minspells" title="@{minspells}" value="0" readonly="readonly"/>
+							<input type="text"  style="margin-bottom:20px;" class="sheet-input-small" name="attr_maxspells" title="@{maxspells}" value="0" readonly="readonly"/></td>
+						</tr>
+					</table>
+					<table class="sheet-sect sheet-center">
+
+
+						<tr class="sheet-to-hit">
+							<td colspan="20">Wizard&nbsp;Spells&nbsp;Per&nbsp;Day</td>
+						</tr>
+						<tr>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+						</tr>
+						<tr>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_1_current" title="@{spells_lvl_1_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_1_max" title="@{spells_lvl_1_max}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_2_current" title="@{spells_lvl_2_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_2_max" title="@{spells_lvl_2_max}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_3_current" title="@{spells_lvl_3_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_3_max" title="@{spells_lvl_3_max}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_4_current" title="@{spells_lvl_4_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_4_max" title="@{spells_lvl_4_max}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_5_current" title="@{spells_lvl_5_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_5_max" title="@{spells_lvl_5_max}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_6_current" title="@{spells_lvl_6_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_6_max" title="@{spells_lvl_6_max}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_7_current" title="@{spells_lvl_7_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_7_max" title="@{spells_lvl_7_max}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_8_current" title="@{spells_lvl_8_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_8_max" title="@{spells_lvl_8_max}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_9_current" title="@{spells_lvl_9_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spells_lvl_9_max" title="@{spells_lvl_9_max}" value="0" style="width:3em;" /></td>
+						</tr>
+						<tr>
+							<td colspan="20">Misc&nbsp;Bonus&nbsp;Spells</td>
+						</tr>
+						<tr>
+							<td colspan="2"><input type="text" class="sheet-input-small" name="attr_spells_lvl_1_bonus" title="@{spells_lvl_1_bonus}" value="0" style="width:3em;" /></td>
+							<td colspan="2"><input type="text" class="sheet-input-small" name="attr_spells_lvl_2_bonus" title="@{spells_lvl_2_bonus}" value="0" style="width:3em;" /></td>
+							<td colspan="2"><input type="text" class="sheet-input-small" name="attr_spells_lvl_3_bonus" title="@{spells_lvl_3_bonus}" value="0" style="width:3em;" /></td>
+							<td colspan="2"><input type="text" class="sheet-input-small" name="attr_spells_lvl_4_bonus" title="@{spells_lvl_4_bonus}" value="0" style="width:3em;" /></td>
+							<td colspan="2"><input type="text" class="sheet-input-small" name="attr_spells_lvl_5_bonus" title="@{spells_lvl_5_bonus}" value="0" style="width:3em;" /></td>
+							<td colspan="2"><input type="text" class="sheet-input-small" name="attr_spells_lvl_6_bonus" title="@{spells_lvl_6_bonus}" value="0" style="width:3em;" /></td>
+							<td colspan="2"><input type="text" class="sheet-input-small" name="attr_spells_lvl_7_bonus" title="@{spells_lvl_7_bonus}" value="0" style="width:3em;" /></td>
+							<td colspan="2"><input type="text" class="sheet-input-small" name="attr_spells_lvl_8_bonus" title="@{spells_lvl_8_bonus}" value="0" style="width:3em;" /></td>
+							<td colspan="2"><input type="text" class="sheet-input-small" name="attr_spells_lvl_9_bonus" title="@{spells_lvl_9_bonus}" value="0" style="width:3em;" /></td>
+						</tr>
+						<tr class="sheet-to-hit">
+							<td colspan="2">1st</td>
+							<td colspan="2">2nd</td>
+							<td colspan="2">3rd</td>
+							<td colspan="2">4th</td>
+							<td colspan="2">5th</td>
+							<td colspan="2">6th</td>
+							<td colspan="2">7th</td>
+							<td colspan="2">8th</td>
+							<td colspan="2">9th</td>
+						</tr>
+					</table>
+				</div>
+				<hr>
+			</div>
+
+			<div class="sheet-wizard">
+				<div class="sheet-header">PRIEST SPELLS PER DAY</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{priest-info-show}" name="attr_priest-info-show" value="1" style="width: 90px; margin: 0 -20px 0 -60px;" /><span></span>
+				<div class="sheet-sect">
+					<br>
+					<table class="sheet-sect sheet-center">
+						<tr>
+							<td colspan="1">Max&nbsp;Divine&nbsp;Spell&nbsp;Level&nbsp;(Wisdom)</td>
+							<td colspan="1">Divine&nbsp;Spellcasting&nbsp;Failure&nbsp;%&nbsp;(Wisdom)</td>
+						</tr>
+
+						<tr>
+							<td style="width: 47px;"><input type="text" name="attr_maxdivinespell" class="sheet-input-small" title="@{maxdivinespell}" value="0" readonly="readonly"/></td>
+
+							<td class="sheet-input-small"><button class="sheet-button" type="roll" name="attr_spellfailure-roll" title="%{selected|spellfailure-roll}" value="&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Chance of Spell Failure}} {{Roll=[[1d100cs>@{SpellFailure}cf<@{SpellFailure}]] %}}"> Roll</button>
+							<input type="text" name="attr_spellfailure" class="sheet-input-small" title="@{spellfailure}" value="0" readonly="readonly"/></td>
+
+						</tr>
+					</table>
+					<br>
+					<table class="sheet-sect sheet-center">
+						<tr class="sheet-to-hit">
+							<td colspan="14">Priest&nbsp;Spells&nbsp;Per&nbsp;Day</td>
+						</tr>
+						<tr>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+							<td colspan="2">Cur&nbsp;/&nbsp;Max</td>
+						</tr>
+
+						<tr>
+							<td><input type="text" class="sheet-input-small" name="attr_divine_spells_lvl_1_current" title="@{divine_spells_lvl_1_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_divine_spells_lvl_1_max" title="@{divine_spells_lvl_1_max}" value="0" style="width:3em;" /></td>
+
+							<td><input type="text" class="sheet-input-small" name="attr_divine_spells_lvl_2_current" title="@{divine_spells_lvl_2_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_divine_spells_lvl_2_max" title="@{divine_spells_lvl_2_max}" value="0" style="width:3em;" /></td>
+
+							<td><input type="text" class="sheet-input-small" name="attr_divine_spells_lvl_3_current" title="@{divine_spells_lvl_3_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_divine_spells_lvl_3_max" title="@{divine_spells_lvl_3_max}" value="0" style="width:3em;" /></td>
+
+							<td><input type="text" class="sheet-input-small" name="attr_divine_spells_lvl_4_current" title="@{divine_spells_lvl_4_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_divine_spells_lvl_4_max" title="@{divine_spells_lvl_4_max}" value="0" style="width:3em;" /></td>
+
+							<td><input type="text" class="sheet-input-small" name="attr_divine_spells_lvl_5_current" title="@{divine_spells_lvl_5_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_divine_spells_lvl_5_max" title="@{divine_spells_lvl_5_max}" value="0" style="width:3em;" /></td>
+
+							<td><input type="text" class="sheet-input-small" name="attr_divine_spells_lvl_6_current" title="@{divine_spells_lvl_6_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_divine_spells_lvl_6_max" title="@{divine_spells_lvl_6_max}" value="0" style="width:3em;" /></td>
+
+							<td><input type="text" class="sheet-input-small" name="attr_divine_spells_lvl_7_current" title="@{divine_spells_lvl_7_current}" value="0" style="width:3em;" /></td>
+							<td><input type="text" class="sheet-input-small" name="attr_divine_spells_lvl_7_max" title="@{divine_spells_lvl_7_max}" value="0" style="width:3em;" /></td>
+						</tr>
+
+						<tr class="sheet-sect sheet-center">
+							<td colspan="14">Bonus&nbsp;Spells</td>
+						</tr>
+
+						<tr>
+							<td colspan="2">Wis&nbsp;+&nbsp;Other</td>
+							<td colspan="2">Wis&nbsp;+&nbsp;Other</td>
+							<td colspan="2">Wis&nbsp;+&nbsp;Other</td>
+							<td colspan="2">Wis&nbsp;+&nbsp;Other</td>
+							<td colspan="2">Wis&nbsp;+&nbsp;Other</td>
+							<td colspan="2">Wis&nbsp;+&nbsp;Other</td>
+							<td colspan="2">Wis&nbsp;+&nbsp;Other</td>
+						</tr>
+
+						<tr>
+							<td><input type="text" class="sheet-input-small" name="attr_spellbonus1" title="@{spellbonus1}" value="0" readonly="readonly"/></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spellbonus1misc" title="@{spellbonus1misc}" value="0"/></td>
+
+							<td><input type="text" class="sheet-input-small" name="attr_spellbonus2" title="@{spellbonus2}" value="0" readonly="readonly"/></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spellbonusmisc2" title="@{spellbonus2misc}" value="0"/></td>
+
+							<td><input type="text" class="sheet-input-small" name="attr_spellbonus3" title="@{spellbonus3}" value="0" readonly="readonly"/></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spellbonus3misc" title="@{spellbonus3misc}" value="0"/></td>
+
+							<td><input type="text" class="sheet-input-small" name="attr_spellbonus4" title="@{spellbonus4}" value="0" readonly="readonly"/></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spellbonus4misc" title="@{spellbonus4misc}" value="0"/></td>
+
+							<td><input type="text" class="sheet-input-small" name="attr_spellbonus5" title="@{spellbonus5}" value="0" readonly="readonly"/></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spellbonus5misc" title="@{spellbonus5misc}" value="0"/></td>
+
+							<td><input type="text" class="sheet-input-small" name="attr_spellbonus6" title="@{spellbonus6}" value="0" readonly="readonly"/></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spellbonus6misc" title="@{spellbonus6misc}" value="0"/></td>
+
+							<td><input type="text" class="sheet-input-small" name="attr_spellbonus7" title="@{spellbonus7}" value="0" readonly="readonly"/></td>
+							<td><input type="text" class="sheet-input-small" name="attr_spellbonus7misc" title="@{spellbonus7misc}" value="0"/></td>
+						</tr>
+
+						<tr class="sheet-to-hit">
+							<td colspan="2">1st</td>
+							<td colspan="2">2nd</td>
+							<td colspan="2">3rd</td>
+							<td colspan="2">4th</td>
+							<td colspan="2">5th</td>
+							<td colspan="2">6th</td>
+							<td colspan="2">7th</td>
+						</tr>
+
+
+					</table>
+
+				</div>
+				<hr>
+			</div>
+
+			<div class="sheet-spells">
+				<div class="sheet-header">SPELL DESCRIPTIONS</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{spells-info-show}" name="attr_spells-info-show" value="1" style="width: 90px; margin: 0 -20px 0 -60px;" /><span></span>
+				<div class="sheet-sect">
+
+					<br>
+					<div class="sheet-spell-tabs">
+						<input type="radio" class="sheet-tab-hidden sheet-tab" name="attr_spell_tabs" value="1"><span class="sheet-tab">1st</span>
+						<input type="radio" class="sheet-tab-hidden sheet-tab" name="attr_spell_tabs" value="2"><span class="sheet-tab">2nd</span>
+						<input type="radio" class="sheet-tab-hidden sheet-tab" name="attr_spell_tabs" value="3"><span class="sheet-tab">3rd</span>
+						<input type="radio" class="sheet-tab-hidden sheet-tab" name="attr_spell_tabs" value="4"><span class="sheet-tab">4th</span>
+						<input type="radio" class="sheet-tab-hidden sheet-tab" name="attr_spell_tabs" value="5"><span class="sheet-tab">5th</span>
+						<input type="radio" class="sheet-tab-hidden sheet-tab" name="attr_spell_tabs" value="6"><span class="sheet-tab">6th</span>
+						<input type="radio" class="sheet-tab-hidden sheet-tab" name="attr_spell_tabs" value="7"><span class="sheet-tab">7th</span>
+						<input type="radio" class="sheet-tab-hidden sheet-tab" name="attr_spell_tabs" value="8"><span class="sheet-tab">8th</span>
+						<input type="radio" class="sheet-tab-hidden sheet-tab" name="attr_spell_tabs" value="9"><span class="sheet-tab">9th</span>
+						<input type="radio" class="sheet-tab-hidden sheet-tab" name="attr_spell_tabs" value="-1"><span class="sheet-tab">All</span>
+					</div>
+					<div class="sheet-sect">
+						<fieldset class="repeating_spells">
+							<input type="hidden" class="sheet-toggle-show" name="attr_spell_show" value="1">
+							<div class="sheet-spell-display sheet-sect sheet-border">
+								<div class="sheet-table sheet-center" style="width:99%;">
+									<div class="sheet-table-row">
+										<span class="sheet-input-sm"><button class="sheet-button" type="roll" name="attr_roll" title="%{selected|repeating_spells_$X_roll}" value="@{macro-text}"></button></span>
+										<span class="sheet-input-sm"><input type="text" name="attr_memorized" title="@{repeating_spells_$X_memorized}" style="width: 100% ; height: 1.8em" value="0"><br>#Mem</span>
+										<span class="sheet-input-sm1">
+											<select name="attr_level" class="sheet-input-select" title="@{repeating_spells_$X_level}">
+												<option selected>?</option>
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
+												<option>9</option>
+											</select>
+											<br>Lvl
+										</span>
+										<span class="sheet-input-long"><input type="text" name="attr_name" title="@{repeating_spells_$X_name}" style="width:100%; height:1.8em;" placeholder="Spell Name" /><br>Name</span>
+										<span class="sheet-input-med1"><input type="text" name="attr_school" title="@{repeating_spells_$X_school}" style="width:100%; height:1.8em;" value="N/A" /><br>School</span>
+										<span class="sheet-input-med1"><input type="text" name="attr_range" title="@{repeating_spells_$X_range}" style="width:100%; height:1.8em;" value="N/A" /><br>Range</span>
+										<span class="sheet-input-med1"><input type="text" name="attr_duration" title="@{repeating_spells_$X_duration}" style="width:100%; height:1.8em;" value="N/A" /><br>Duration</span>
+										<span class="sheet-input-med1"><input type="text" name="attr_aoe" title="@{repeating_spells_$X_aoe}" style="width:100%; height:1.8em;" value="N/A" /><br>Area</span>
+										<span class="sheet-input-med"><input type="text" name="attr_components" title="@{repeating_spells_$X_components}" style="width:100%; height:1.8em;" value="N/A" /><br>Comp</span>
+										<span class="sheet-input-sm"><input type="text" name="attr_ct" title="@{repeating_spells_$X_ct}" style="width:100%; height:1.8em;" value="N/A" /><br>CT</span>
+										<span class="sheet-input-med"><input type="text" name="attr_save" title="@{repeating_spells_$X_save}" style="width:100%; height:1.8em;" value="N/A" /><br>Save</span>
+										<span class="sheet-input"><textarea name="attr_macro-text" class="sheet-macro-text-short" title="@{repeating_spells_$X_macro-text}">&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Casts: @{name}}} {{Range:=@{range}}} {{Duration:=@{duration}}} {{AOE:=@{aoe}}} {{Save:=@{save}}}</textarea><br><span style="white-space: nowrap;">Macro-Text</span></span>
+									</div>
+								</div>
+								<b style="margin-left:20px;">Spell Description</b>
+								<input type="checkbox" class="sheet-sect-show" title="@{repeating_spells_$X_description-show}" name="attr_description-show" value="1" style="opacity: 0;width: 140px;height: 20px; position: relative; top: 0; left: 0;margin: 0 -20px 0 -115px; cursor: pointer; z-index: 1" /><span></span>
+								<div class="sheet-table sheet-sect">
+									<div class="sheet-table-row sheet-center sheet-sect">
+										<textarea name="attr_description" title="@{repeating_spells_$X_description}" placeholder="Spell Description" ></textarea>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+					<div class="sheet-table-row" style="margin-top: 1em;">
+						<b style="margin-left:20px;">Spells Notes</b>
+						<input type="checkbox" class="sheet-sect-show" title="@{spellsnotes-show}" name="attr_spellsnotes-show" value="1" style="width: 140px; margin: 0 -20px 0 -115px;" /><span></span>
+						<div class="sheet-table sheet-sect">
+							<div class="sheet-table-row sheet-center sheet-sect">
+								<textarea name="attr_spellsnotes" title="@{spellsnotes}" placeholder="Spells Notes"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+			</div>
+
+			<div class="sheet-psionics">
+				<div class="sheet-header">PSIONICS</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{psionics-info-show}" name="attr_psionics-info-show" value="1" style="width: 90px; margin: 0 -20px 0 -60px;" /><span></span>
+				<div class="sheet-sect">
+					<div class="sheet-table">
+						<table>
+							<tr style=" text-align: center;">
+								<td colspan="2">Power Points</td>
+								<td colspan="5">Points/hour</td>
+							</tr>
+							<tr style="text-align: center;">
+								<td class="sheet-to-hit">Current</td>
+								<td>Max</td>
+								<td>Combat</td>
+								<td>Walking</td>
+								<td>Sitting</td>
+								<td>Resting</td>
+								<td>Sleeping</td>
+								<td>Minor Powers:</td>
+								<td><input type="text" class="sheet-input-small" name="attr_psionic_minor" title="@{psionic_minor}" value="0"/><br>
+								<td>Major Powers:</td>
+								<td><input type="text" class="sheet-input-small" name="attr_psionic_major" title="@{psionic_major}" value="0"/><br>
+							</tr>
+							<tr style=" text-align: center;">
+								<td><input type="text" class="sheet-input-small" name="attr_psionic_points" title="@{psionic_points}" value="0" /></td>
+								<td><input type="text" class="sheet-input-small" name="attr_psionic_points_max" title="@{psionic_points_max}" value="0" /></td>
+								<td><input type="text" class="sheet-input-small" name="attr_psionic_points_r1" title="@{psionic_points_r1}" value="0" disabled /></td>
+								<td><input type="text" class="sheet-input-small" name="attr_psionic_points_r2" title="@{psionic_points_r2}" value="3" disabled /></td>
+								<td><input type="text" class="sheet-input-small" name="attr_psionic_points_r3" title="@{psionic_points_r3}" value="6" disabled /></td>
+								<td><input type="text" class="sheet-input-small" name="attr_psionic_points_r4" title="@{psionic_points_r4}" value="12" disabled /></td>
+								<td><input type="text" class="sheet-input-small" name="attr_psionic_points_r5" title="@{psionic_points_r5}" value="24" disabled /></td>
+								<td>Attack Modes:</td>
+								<td><input type="text" class="sheet-input-small" name="attr_psionic_attack" title="@{psionic_attack}" value="0"/><br>
+								<td>Defense Modes:</td>
+								<td><input type="text" class="sheet-input-small" name="attr_psionic_defense" title="@{psionic_defense}" value="0"/><br>
+							</tr>
+						</table>
+						<br>
+						<div class="sheet-table-row sheet-center">
+							<textarea name="attr_psionics_minor_powers" title="@{psionics_minor_powers}" placeholder="Minor Psionic Powers"></textarea>
+							<textarea name="attr_psionics_major_powers" title="@{psionics_major_powers}" placeholder="Major Psionic Powers"></textarea>
+							<textarea name="attr_psionics_attack_modes" title="@{psionics_attack_modes}" placeholder="Psionic Attack Modes"></textarea>
+							<textarea name="attr_psionics_defense_modes" title="@{psionics_defense_modes}" placeholder="Psionic Defense Modes"></textarea>
+						</div>
+					</div>
+				</div>
+				<hr>
+			</div>
+
+			<div class="sheet-notes">
+				<div class="sheet-header">NOTES</div>
+				<input type="checkbox" class="sheet-sect-show" title="@{notes-info-show}" name="attr_notes-info-show" value="1" style="width: 90px; margin: 0 -20px 0 -60px;" /><span></span>
+				<div class="sheet-sect">
+					<div class="sheet-table">
+						<div class="sheet-table-row sheet-center">
+							<textarea name="attr_notes" title="@{notes}" placeholder="Misc Notes"></textarea>
+						</div>
+					</div>
+				</div>
+				<hr>
+			</div>
+			<h4>Settings</h4>
+				<div class="sheet-options sheet-text-small">
+					<span style="margin-right: 2em;">
+						Background:
+						<input type="radio" class="sheet-useBackground" name="attr_background" value="1" title="No background image.">Off
+						<input type="radio" class="sheet-useBackground" name="attr_background" value="2" title="Enable background image." checked="">On
+					</span>
+					<span>
+						Roll Template Color:
+						<select name="attr_color_option" title="@{color_option}" style="width: 8em;">
+							<option value="black" selected>black</option>
+							<option value="grey">grey</option>
+							<option value="darkgrey">darkgrey</option>
+							<option value="white">white</option>
+							<option value="red">red</option>
+							<option value="darkred">darkred</option>
+							<option value="orange">orange</option>
+							<option value="darkorange">darkorange</option>
+							<option value="yellow">yellow</option>
+							<option value="darkyellow">darkyellow</option>
+							<option value="green">green</option>
+							<option value="darkgreen">darkgreen</option>
+							<option value="blue">blue</option>
+							<option value="darkblue">darkblue</option>
+							<option value="purple">purple</option>
+							<option value="darkpurple">darkpurple</option>
+						</select>
+					</span>
+				</div>
+				<div class="sheet-footer sheet-text-small">
+					<div class="sheet-data">
+						<span class="sheet-data sheet-center">Questions/feedback?:
+						<button type="roll" class="sheet-button-url" value="https://app.roll20.net/forum/post/8460127/ad-and-d-1e-update">Current AD&D1e sheet thread on Roll20.</button>
+						</span>
+					</div>
+					<div class="sheet-data" style="float: right; margin-top: -1.5em;">
+						<span class="sheet-data sheet-center">Original Author: Adam Ness | Contributions by: Vince &amp; Community. |
+						<span>sheet v.<input name="attr_sheet_version" type="text" value="0" class="sheet-version" style="margin: -5px 0 0 -5px;" readonly /><i>12/30/20'</i></span>
+						</span>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+<div class="sheet-roll_templates">
+	<!-- Attack Roll Template -->
+	<rolltemplate class="sheet-rolltemplate-attacks">
+		<table class="sheet-rolltemplate-attacks {{#color}}color-{{color}}{{/color}}">
+			{{#name}}<tr><th>{{name}}</th></tr>{{/name}}
+			{{#subtag}}<tr><td class="sheet-subheader">{{subtag}}</td></tr>{{/subtag}}
+
+			{{#attack1}}<tr><td><span class="sheet-tcat">Attack = </span>{{attack1}}</td></tr>{{/attack1}}
+			{{#damage1vsSM}}<tr><td><span class="sheet-tcat">Damage vs S/M = </span>{{damage1vsSM}}</td></tr>{{/damage1vsSM}}
+			{{#damage1vsL}}<tr><td><span class="sheet-tcat">Damage vs L = </span>{{damage1vsL}}</td></tr>{{/damage1vsL}}
+
+			{{#attack2}}<tr><td><span class="sheet-tcat">Attack 2 = </span>{{attack2}}</td></tr>{{/attack2}}
+			{{#damage2vsSM}}<tr><td><span class="sheet-tcat">Damage vs S/M = </span>{{damage2vsSM}}</td></tr>{{/damage2vsSM}}
+			{{#damage2vsL}}<tr><td><span class="sheet-tcat">Damage vs L = </span>{{damage2vsL}}</td></tr>{{/damage2vsL}}
+
+			{{#attack3}}<tr><td><span class="sheet-tcat">Attack 3 = </span>{{attack3}}</td></tr>{{/attack3}}
+			{{#damage3vsSM}}<tr><td><span class="sheet-tcat">Damage vs S/M = </span>{{damage3vsSM}}</td></tr>{{/damage3vsSM}}
+			{{#damage3vsL}}<tr><td><span class="sheet-tcat">Damage vs L = </span>{{damage3vsL}}</td></tr>{{/damage3vsL}}
+
+			{{#attack4}}<tr><td><span class="sheet-tcat">Attack 4 = </span>{{attack4}}</td></tr>{{/attack4}}
+			{{#damage4vsSM}}<tr><td><span class="sheet-tcat">Damage vs S/M = </span>{{damage4vsSM}}</td></tr>{{/damage4vsSM}}
+			{{#damage4vsL}}<tr><td><span class="sheet-tcat">Damage vs L = </span>{{damage4vsL}}</td></tr>{{/damage4vsL}}
+
+			{{#ToHitAC-10to0}}<tr><td class="sheet-ToHit">-10|-9|-8|-7|-6|-5|-4|-3|-2|-1|&nbsp;**0**<br>{{ToHitAC-10to0}}</td></tr>{{/ToHitAC-10to0}}
+			{{#ToHitAC1to10}}<tr><td class="sheet-ToHit"> **0**| 1| 2| 3| 4| 5| 6| 7| 8| 9|10<br>{{ToHitAC1to10}}</td></tr>{{/ToHitAC1to10}}
+
+			{{#allprops() name subtag color attack1 attack2 attack3 attack4 damage1vsSM damage2vsSM damage3vsSM damage4vsSM damage1vsL damage2vsL damage3vsL damage4vsL ToHitAC-10to0 ToHitAC1to10 WeaponNotes freetext}}
+			<tr><td><span class="sheet-tcat">{{key}} = </span>{{value}}</td></tr>
+			{{/allprops() name subtag color attack1 attack2 attack3 attack4 damage1vsSM damage2vsSM damage3vsSM damage4vsSM damage1vsL damage2vsL damage3vsL damage4vsL ToHitAC-10to0 ToHitAC1to10 WeaponNotes freetext}}
+
+			{{#WeaponNotes}}<tr><td class="sheet-text">**Notes:** {{WeaponNotes}}</td></tr>{{/WeaponNotes}}
+			{{#freetext}}<tr><td colspan="2" class="sheet-text">{{freetext}}</td></tr>{{/freetext}}
+
+		</table>
+	</rolltemplate>
+	<!-- General Roll Template -->
+	<rolltemplate class="sheet-rolltemplate-general">
+		<table class="sheet-rolltemplate-general  {{#color}}color-{{color}}{{/color}}">
+			{{#name}}<tr><th colspan="2">{{name}}</th></tr>{{/name}}
+			{{#subtag}}<tr><td colspan="2" class="sheet-subheader">{{subtag}}</td></tr>{{/subtag}}
+
+			{{#allprops() name subtag freetext color}}
+			<tr><td style="vertical-align:middle;"><span class="sheet-tcat">{{key}}</span></td><td>{{value}}</td></tr>
+			{{/allprops() name subtag freetext color}}
+
+			{{#freetext}}<tr><td colspan="2" class="sheet-text">{{freetext}}</td></tr>{{/freetext}}
+
+		</table>
+	</rolltemplate>
+</div>
+
+<script type="text/worker">
+	/* ---- BEGIN: TheAaronSheet.js ---- */
+	// Github:   https://github.com/shdwjk/TheAaronSheet/blob/master/TheAaronSheet.js
+	// By:       The Aaron, Arcane Scriptomancer
+	// Contact:  https://app.roll20.net/users/104025/the-aaron
+
+
+	var TAS = TAS || (function(){
+		'use strict';
+
+		var version = '0.2.5',
+			lastUpdate = 1504710542,
+
+			loggingSettings = {
+				debug: {
+					key:     'debug',
+					title:   'DEBUG',
+					color: {
+						bgLabel: '#7732A2',
+						label:   '#F2EF40',
+						bgText:  '#FFFEB7',
+						text:    '#7732A2'
+					}
+				},
+				error: {
+					key:     'error',
+					title:   'Error',
+					color: {
+						bgLabel: '#C11713',
+						label:   'white',
+						bgText:  '#C11713',
+						text:    'white'
+					}
+				},
+				warn: {
+					key:     'warn',
+					title:   'Warning',
+					color: {
+						bgLabel: '#F29140',
+						label:   'white',
+						bgText:  '#FFD8B7',
+						text:    'black'
+					}
+				},
+				info: {
+					key:     'info',
+					title:   'Info',
+					color: {
+						bgLabel: '#413FA9',
+						label:   'white',
+						bgText:  '#B3B2EB',
+						text:    'black'
+					}
+				},
+				notice: {
+					key:     'notice',
+					title:   'Notice',
+					color: {
+						bgLabel: '#33C133',
+						label:   'white',
+						bgText:  '#ADF1AD',
+						text:    'black'
+					}
+				},
+				log: {
+					key:     'log',
+					title:   'Log',
+					color: {
+						bgLabel: '#f2f240',
+						label:   'black',
+						bgText:  '#ffff90',
+						text:    'black'
+					}
+				},
+				callstack: {
+					key:     'TAS',
+					title:   'function',
+					color: {
+						bgLabel: '#413FA9',
+						label:   'white',
+						bgText:  '#B3B2EB',
+						text:    'black'
+					}
+				},
+				callstack_async: {
+					key:     'TAS',
+					title:   'ASYNC CALL',
+					color: {
+						bgLabel: '#413FA9',
+						label:   'white',
+						bgText:  '#413FA9',
+						text:    'white'
+					}
+				},
+				TAS: {
+					key:     'TAS',
+					title:   'TAS',
+					color: {
+						bgLabel: 'grey',
+						label:   'black;background:linear-gradient(#304352,#d7d2cc,#d7d2cc,#d7d2cc,#304352)',
+						bgText:  'grey',
+						text:    'black;background:linear-gradient(#304352,#d7d2cc,#d7d2cc,#d7d2cc,#304352)'
+					}
+				}
+			},
+
+
+			config = {
+				debugMode: false,
+				logging: {
+					log: true,
+					notice: true,
+					info: true,
+					warn: true,
+					error: true,
+					debug: false
+				}
+			},
+
+			callstackRegistry = [],
+			queuedUpdates = {}, //< Used for delaying saves till the last moment.
+
+
+
+		complexType = function(o){
+			switch(typeof o){
+				case 'string':
+					return 'string';
+				case 'boolean':
+					return 'boolean';
+				case 'number':
+					return (_.isNaN(o) ? 'NaN' : (o.toString().match(/\./) ? 'decimal' : 'integer'));
+				case 'function':
+					return 'function: '+(o.name ? o.name+'()' : '(anonymous)');
+				case 'object':
+					return (_.isArray(o) ? 'array' : (_.isArguments(o) ? 'arguments' : ( _.isNull(o) ? 'null' : 'object')));
+				default:
+					return typeof o;
+			}
+		},
+
+		dataLogger = function(primaryLogger,secondaryLogger,data){
+			_.each(data,function(m){
+				var type = complexType(m);
+				switch(type){
+					case 'string':
+						primaryLogger(m);
+						break;
+					case 'undefined':
+					case 'null':
+					case 'NaN':
+						primaryLogger('['+type+']');
+						break;
+					case 'number':
+					case 'not a number':
+					case 'integer':
+					case 'decimal':
+					case 'boolean':
+						primaryLogger('['+type+']: '+m);
+						break;
+					default:
+						primaryLogger('['+type+']:=========================================');
+						secondaryLogger(m);
+						primaryLogger('=========================================================');
+						break;
+				}
+			});
+		},
+
+
+		colorLog = function(options){
+			var coloredLoggerFunction,
+				key = options.key,
+				label = options.title || 'TAS',
+				lBGColor = (options.color && options.color.bgLabel) || 'blue',
+				lTxtColor = (options.color && options.color.label) || 'white',
+				mBGColor = (options.color && options.color.bgText) || 'blue',
+				mTxtColor = (options.color && options.color.text) || 'white';
+
+			coloredLoggerFunction = function(message){
+				/* eslint-disable no-console */
+				console.log(
+					'%c '+label+': %c '+message + ' ',
+					'background-color: '+lBGColor+';color: '+lTxtColor+'; font-weight:bold;',
+					'background-color: '+mBGColor+';color: '+mTxtColor+';'
+				);
+				/* eslint-enable no-console */
+			};
+			return function(){
+				if('TAS'===key || config.logging[key]){
+					/* eslint-disable no-console */
+				   dataLogger(coloredLoggerFunction,function(m){console.log(m);},_.toArray(arguments));
+					/* eslint-enable no-console */
+				}
+			};
+		},
+
+		logDebug  = colorLog(loggingSettings.debug),
+		logError  = colorLog(loggingSettings.error),
+		logWarn   = colorLog(loggingSettings.warn),
+		logInfo   = colorLog(loggingSettings.info),
+		logNotice = colorLog(loggingSettings.notice),
+		logLog    = colorLog(loggingSettings.log),
+		log       = colorLog(loggingSettings.TAS),
+		logCS     = colorLog(loggingSettings.callstack),
+		logCSA    = colorLog(loggingSettings.callstack_async),
+
+		registerCallstack = function(callstack,label){
+			var idx=_.findIndex(callstackRegistry,function(o){
+				return (_.difference(o.stack,callstack).length === _.difference(callstack,o.stack).length) &&
+					_.difference(o.stack,callstack).length === 0 &&
+					o.label === label;
+			});
+			if(-1 === idx){
+				idx=callstackRegistry.length;
+				callstackRegistry.push({
+					stack: callstack,
+					label: label
+				});
+			}
+			return idx;
+		},
+
+		setConfigOption = function(options){
+			var newconf =_.defaults(options,config);
+			newconf.logging=_.defaults(
+				(options && options.logging)||{},
+				config.logging
+			);
+			config=newconf;
+		},
+
+		isDebugMode = function(){
+			return config.debugMode;
+		},
+
+		debugMode = function(){
+			config.logging.debug=true;
+			config.debugMode = true;
+		},
+
+		getCallstack = function(){
+			var e = new Error('dummy'),
+				stack = _.map(_.rest(e.stack.replace(/^[^(]+?[\n$]/gm, '')
+				.replace(/^\s+at\s+/gm, '')
+				.replace(/^Object.<anonymous>\s*\(/gm, '{anonymous}()@')
+				.split('\n')),function(l){
+					return l.replace(/\s+.*$/,'');
+				});
+			return stack;
+		},
+		logCallstackSub = function(cs){
+			var matches, csa;
+			_.find(cs,function(line){
+				matches = line.match(/TAS_CALLSTACK_(\d+)/);
+				if(matches){
+				   csa=callstackRegistry[matches[1]];
+				   logCSA( '===================='+(csa.label ? '> '+csa.label+' <' : '')+'====================');
+				   logCallstackSub(csa.stack);
+				   return true;
+				}
+				logCS(line);
+				return false;
+			});
+		},
+		logCallstack = function(){
+			var cs;
+			if(config.debugMode){
+				cs = getCallstack();
+				cs.shift();
+				log('==============================> CALLSTACK <==============================');
+				logCallstackSub(cs);
+				log('=========================================================================');
+			}
+		},
+
+
+		wrapCallback = function (label, callback, context){
+			var callstack;
+			if('function' === typeof label){
+				context=callback;
+				callback=label;
+				label=undefined;
+			}
+			if(!config.debugMode){
+				return (function(cb,ctx){
+					return function(){
+						cb.apply(ctx||{},arguments);
+					};
+				}(callback,context));
+			}
+
+			callstack = getCallstack();
+			callstack.shift();
+
+			return (function(cb,ctx,cs,lbl){
+				var ctxref=registerCallstack(cs,lbl);
+
+				/*jshint -W054 */
+				return new Function('cb','ctx','TASlog',
+					"return function TAS_CALLSTACK_"+ctxref+"(){"+
+						"var start,end;"+
+						"TASlog('Entering: '+(cb.name||'(anonymous function)'));"+
+						"start=_.now();"+
+						"cb.apply(ctx||{},arguments);"+
+						"end=_.now();"+
+						"TASlog('Exiting: '+(cb.name||'(anonymous function)')+' :: '+(end-start)+'ms elapsed');"+
+					"};")(cb,ctx,log);
+				/*jshint +W054 */
+			}(callback,context,callstack,label));
+		},
+
+
+		prepareUpdate = function( attribute, value ){
+			queuedUpdates[attribute]=value;
+		},
+
+		applyQueuedUpdates = function() {
+		  setAttrs(queuedUpdates);
+		  queuedUpdates = {};
+		},
+
+		namesFromArgs = function(args,base){
+			return _.chain(args)
+				.reduce(function(memo,attr){
+					if('string' === typeof attr) {
+						memo.push(attr);
+					} else if(_.isArray(args) || _.isArguments(args)){
+						memo = namesFromArgs(attr,memo);
+					}
+					return memo;
+				},(_.isArray(base) && base) || [])
+				.uniq()
+				.value();
+		},
+
+		addId = function(obj,value){
+			Object.defineProperty(obj,'id',{
+				value: value,
+				writable: false,
+				enumerable: false
+			});
+		},
+
+		addProp = function(obj,prop,value,fullname){
+			(function(){
+				var pname=(_.contains(['S','F','I','D'],prop) ? '_'+prop : prop),
+					full_pname = fullname || prop,
+					pvalue=value;
+
+				_.each(['S','I','F'],function(p){
+					if( !_.has(obj,p)){
+						Object.defineProperty(obj, p, {
+							value: {},
+							enumerable: false,
+							readonly: true
+						});
+					}
+				});
+				if( !_.has(obj,'D')){
+					Object.defineProperty(obj, 'D', {
+						value: _.reduce(_.range(10),function(m,d){
+								Object.defineProperty(m, d, {
+									value: {},
+									enumerable: true,
+									readonly: true
+								});
+								return m;
+							},{}),
+						enumerable: false,
+						readonly: true
+					});
+				}
+
+
+				// Raw value
+				Object.defineProperty(obj, pname, {
+					enumerable: true,
+					set: function(v){
+						if(v!==pvalue) {
+							pvalue=v;
+							prepareUpdate(full_pname,v);
+						}
+					},
+					get: function(){
+						return pvalue;
+					}
+				});
+
+				// string value
+				Object.defineProperty(obj.S, pname, {
+					enumerable: true,
+					set: function(v){
+						var val=v.toString();
+						if(val !== pvalue) {
+							pvalue=val;
+							prepareUpdate(full_pname,val);
+						}
+					},
+					get: function(){
+						return pvalue.toString();
+					}
+				});
+
+				// int value
+				Object.defineProperty(obj.I, pname, {
+					enumerable: true,
+					set: function(v){
+						var val=parseInt(v,10) || 0;
+						if(val !== pvalue){
+							pvalue=val;
+							prepareUpdate(full_pname,val);
+						}
+					},
+					get: function(){
+						return parseInt(pvalue,10) || 0;
+					}
+				});
+
+				// float value
+				Object.defineProperty(obj.F, pname, {
+					enumerable: true,
+					set: function(v){
+						var val=parseFloat(v) || 0;
+						if(val !== pvalue) {
+							pvalue=val;
+							prepareUpdate(full_pname,val);
+						}
+					},
+					get: function(){
+						return parseFloat(pvalue) || 0;
+					}
+				});
+				_.each(_.range(10),function(d){
+					Object.defineProperty(obj.D[d], pname, {
+						enumerable: true,
+						set: function(v){
+							var val=(parseFloat(v) || 0).toFixed(d);
+							if(val !== pvalue){
+								pvalue=val;
+								prepareUpdate(full_pname,val);
+							}
+						},
+						get: function(){
+							return (parseFloat(pvalue) || 0).toFixed(d);
+						}
+					});
+				});
+
+			}());
+		},
+
+		repeating = function( section ) {
+			return (function(s){
+				var sectionName = s,
+					attrNames = [],
+					fieldNames = [],
+					operations = [],
+					after = [],
+
+				repAttrs = function TAS_Repeating_Attrs(){
+					attrNames = namesFromArgs(arguments,attrNames);
+					return this;
+				},
+				repFields = function TAS_Repeating_Fields(){
+					fieldNames = namesFromArgs(arguments,fieldNames);
+					return this;
+				},
+				repReduce = function TAS_Repeating_Reduce(func, initial, final, context) {
+					operations.push({
+						type: 'reduce',
+						func: (func && _.isFunction(func) && func) || _.noop,
+						memo: (_.isUndefined(initial) && 0) || initial,
+						final: (final && _.isFunction(final) && final) || _.noop,
+						context: context || {}
+					});
+					return this;
+				},
+				repMap = function TAS_Repeating_Map(func, final, context) {
+					operations.push({
+						type: 'map',
+						func: (func && _.isFunction(func) && func) || _.noop,
+						final: (final && _.isFunction(final) && final) || _.noop,
+						context: context || {}
+					});
+					return this;
+				},
+				repEach = function TAS_Repeating_Each(func, final, context) {
+					operations.push({
+						type: 'each',
+						func: (func && _.isFunction(func) && func) || _.noop,
+						final: (final && _.isFunction(final) && final) || _.noop,
+						context: context || {}
+					});
+					return this;
+				},
+				repTap = function TAS_Repeating_Tap(final, context) {
+					operations.push({
+						type: 'tap',
+						final: (final && _.isFunction(final) && final) || _.noop,
+						context: context || {}
+					});
+					return this;
+				},
+				repAfter = function TAS_Repeating_After(callback,context) {
+					after.push({
+						callback: (callback && _.isFunction(callback) && callback) || _.noop,
+						context: context || {}
+					});
+					return this;
+				},
+				repExecute = function TAS_Repeating_Execute(callback,context){
+					var rowSet = {},
+						attrSet = {},
+						fieldIds = [],
+						fullFieldNames = [];
+
+					repAfter(callback,context);
+
+					// call each operation per row.
+					// call each operation's final
+					getSectionIDs("repeating_"+sectionName,function(ids){
+						fieldIds = ids;
+						fullFieldNames = _.reduce(fieldIds,function(memo,id){
+							return memo.concat(_.map(fieldNames,function(name){
+								return 'repeating_'+sectionName+'_'+id+'_'+name;
+							}));
+						},[]);
+						getAttrs( _.uniq(attrNames.concat(fullFieldNames)), function(values){
+							_.each(attrNames,function(aname){
+								if(values.hasOwnProperty(aname)){
+									addProp(attrSet,aname,values[aname]);
+								}
+							});
+
+							rowSet = _.reduce(fieldIds,function(memo,id){
+								var r={};
+								addId(r,id);
+								_.each(fieldNames,function(name){
+									var fn = 'repeating_'+sectionName+'_'+id+'_'+name;
+									addProp(r,name,values[fn],fn);
+								});
+
+								memo[id]=r;
+
+								return memo;
+							},{});
+
+							_.each(operations,function(op){
+								var res;
+								switch(op.type){
+									case 'tap':
+										_.bind(op.final,op.context,rowSet,attrSet)();
+										break;
+
+									case 'each':
+										_.each(rowSet,function(r){
+											_.bind(op.func,op.context,r,attrSet,r.id,rowSet)();
+										});
+										_.bind(op.final,op.context,rowSet,attrSet)();
+										break;
+
+									case 'map':
+										res = _.map(rowSet,function(r){
+											return _.bind(op.func,op.context,r,attrSet,r.id,rowSet)();
+										});
+										_.bind(op.final,op.context,res,rowSet,attrSet)();
+										break;
+
+									case 'reduce':
+										res = op.memo;
+										_.each(rowSet,function(r){
+											res = _.bind(op.func,op.context,res,r,attrSet,r.id,rowSet)();
+										});
+										_.bind(op.final,op.context,res,rowSet,attrSet)();
+										break;
+								}
+							});
+
+							// finalize attrs
+							applyQueuedUpdates();
+							_.each(after,function(op){
+								_.bind(op.callback,op.context)();
+							});
+						});
+					});
+				};
+
+				return {
+					attrs: repAttrs,
+					attr: repAttrs,
+
+					column: repFields,
+					columns: repFields,
+					field: repFields,
+					fields: repFields,
+
+					reduce: repReduce,
+					inject: repReduce,
+					foldl: repReduce,
+
+					map: repMap,
+					collect: repMap,
+
+					each: repEach,
+					forEach: repEach,
+
+					tap: repTap,
+					'do': repTap,
+
+					after: repAfter,
+					last: repAfter,
+					done: repAfter,
+
+					execute: repExecute,
+					go: repExecute,
+					run: repExecute
+				};
+			}(section));
+		},
+
+
+		repeatingSimpleSum = function(section, field, destination){
+			repeating(section)
+				.attr(destination)
+				.field(field)
+				.reduce(function(m,r){
+					return m + (r.F[field]);
+				},0,function(t,r,a){
+					a.S[destination]=t;
+				})
+				.execute();
+		};
+
+		/* eslint-disable no-console */
+		console.log('%c•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸  The Aaron Sheet  v'+version+'  ¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•','background: linear-gradient(to right,green,white,white,green); color:black;text-shadow: 0 0 8px white;');
+		console.log('%c•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸  Last update: '+(new Date(lastUpdate*1000))+'  ¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•','background: linear-gradient(to right,green,white,white,green); color:black;text-shadow: 0 0 8px white;');
+		/* eslint-enable no-console */
+
+
+		return {
+			/* Repeating Sections */
+			repeatingSimpleSum: repeatingSimpleSum,
+			repeating: repeating,
+
+			/* Configuration */
+			config: setConfigOption,
+
+			/* Debugging */
+			callback: wrapCallback,
+			callstack: logCallstack,
+			debugMode: debugMode,
+			isDebugMode: isDebugMode,
+			_fn: wrapCallback,
+
+			/* Logging */
+			debug: logDebug,
+			error: logError,
+			warn: logWarn,
+			info: logInfo,
+			notice: logNotice,
+			log: logLog
+		};
+	}());
+
+	/* ---- END: TheAaronSheet.js ---- */
+
+    /* STRENGTH CALCS */
+    on("change:strength change:exceptionalstrength sheet:opened", function() {
+        getAttrs(["strength", "exceptionalstrength"], function(values) {
+            let str = parseInt(values.strength)||0;
+            let ex = parseInt(values.exceptionalstrength)||0;
+            let mb = 0;
+            let db = 0;
+            let enc = 500;
+            let od = 1;
+            let bb = 0;
+            let dd = 6;
+            let mdmin = 0;
+            let mdmax = 0;
+			if (str==1) {
+				mb=-5;
+				db=-4;
+				enc-=450;
+				dd=20;
+			} else if (str==2) {
+				mb=-3;
+				db=-2;
+				enc-=450;
+				dd=10;
+			} else if(str==3) {
+                mb=-3;
+                db=-1;
+                enc-=350;
+            } else if(str==4||str==5) {
+                mb=-2;
+                db=-1;
+                enc-=250;
+            } else if(str==6||str==7) {
+                mb=-1;
+                enc-=150;
+            } else if(str==8||str==9) {
+                od=2;
+                bb=1;
+            } else if(str==10||str==11) {
+                od=2;
+                bb=2;
+            } else if(str==12||str==13) {
+                enc+=100;
+                od=2;
+                bb=4;
+            } else if(str==14||str==15) {
+                enc+=200;
+                od=2;
+                bb=7;
+            } else if(str==16) {
+                db=1;
+                enc+=350;
+                od=3;
+                bb=10;
+            } else if(str==17) {
+                mb=1;
+                db=1;
+                enc+=500;
+                od=3;
+                bb=13;
+            } else if(str==18) {
+                if (ex<0) {
+                    ex = 0;
+                }
+                if (ex>100) {
+                    ex = 100;
+                }
+                if(ex==0){
+                    mb=1;
+                    db=2;
+                    enc+=750;
+                    od=3;
+                    bb=16;
+                } else if (ex<51) {
+                    mb=1;
+                    db=3;
+                    enc+=1000;
+                    od=3;
+                    bb=20;
+                } else if (ex<76) {
+                    mb=2;
+                    db=3;
+                    enc+=1250;
+                    od=4;
+                    bb=25;
+                } else if (ex<91) {
+                    mb=2;
+                    db=4;
+                    enc+=1500;
+                    od=4;
+                    bb=30;
+                } else if (ex<100) {
+                    mb=2;
+                    db=5;
+                    enc+=2000;
+                    od=4;
+                    bb=35;
+                    mdmin = 1;
+                    mdmax = 6;
+                } else if (ex==100) {
+                    mb=3;
+                    db=6;
+                    enc+=3000;
+                    od=5;
+                    bb=40;
+                    mdmin = 2;
+                    mdmax = 6;
+                }
+            } else if(str==19) {
+                mb=3;
+                db=7;
+                enc+=4500;
+                od=7;
+                dd=8;
+                mdmin=3;
+                mdmax=6;
+                bb=50;
+            } else if(str==20) {
+                mb=3;
+                db=8;
+                enc+=5000;
+                od=7;
+                dd=8;
+                mdmin=3;
+                mdmax=6;
+                bb=60;
+            } else if(str==21) {
+                mb=4;
+                db=9;
+                enc+=6000;
+                od=9;
+                dd=10;
+                mdmin=4;
+                mdmax=6;
+                bb=70;
+            } else if(str==22) {
+                mb=4;
+                db=10;
+                enc+=7500;
+                od=11;
+                dd=12;
+                mdmin=4;
+                mdmax=6;
+                bb=80;
+            } else if(str==23) {
+                mb=5;
+                db=11;
+                enc+=9000;
+                od=11;
+                dd=12;
+                mdmin=5;
+                mdmax=6;
+                bb=90;
+            } else if(str==24) {
+                mb=6;
+                db=12;
+                enc+=12000;
+                od=19;
+                dd=20;
+                mdmin=7;
+                mdmax=8;
+                bb=100;
+            } else if(str==25) {
+                mb=7;
+                db=14;
+                enc+=15000;
+                od=96;
+                dd=100;
+                mdmin=9;
+                mdmax=10;
+                bb=100;
+            }
+
+            setAttrs({
+                ExceptionalStrength: ex,
+                meleebonus: mb,
+                dmgbonus: db,
+                encumbrancebonus: enc,
+                minorstrengthfeat: od,
+                minorstrengthdie: dd,
+                magicstrengthfeat: mdmin,
+                magicstrengthdie: mdmax,
+                majorstrengthfeat: bb
+            });
+        });
+    });
+
+	/* INTELLIGENCE CALCS */
+    on("change:intelligence sheet:opened", function() {
+        getAttrs(["intelligence"], function(values) {
+            let intel = parseInt(values.intelligence)||0;
+            let lang = 0;
+						let literacy = "No";
+			let spell = 0;
+			let spellmax = "4th";
+			let min = 0;
+			let max = 0;
+			let immune = "None";
+			if (intel>8) {
+				literacy = "Yes";
+			}
+
+			if (intel==1) {
+				lang = -1;
+			} else if (intel==8) {
+				lang = 1;
+			} else if (intel==9) {
+				lang = 1;
+				spell = 35;
+				min = 4;
+				max = 6;
+			} else if (intel>9&&intel<13) {
+				lang = 2;
+				spell = 45;
+				min = 5;
+				max = 7;
+				spellmax = "5th";
+				if (intel==12) {
+					spellmax = "6th";
+					lang++;
+				}
+			} else if (intel==13||intel==14) {
+				lang = 3;
+				spell = 55;
+				min = 6;
+				max = 9;
+				spellmax = "6th";
+				if (intel==14) {
+					spellmax="7th";
+					lang++;
+				}
+			} else if (intel==15||intel==16) {
+				lang = 4;
+				spell = 65;
+				min = 7;
+				max = 11;
+				spellmax="7th";
+				if (intel==16) {
+					lang++;
+					spellmax="8th";
+				}
+			} else if (intel==17) {
+				lang = 6;
+				spell = 75;
+				min = 8;
+				max = 14;
+				spellmax="8th";
+			} else if (intel==18) {
+				lang = 7;
+				spell = 85;
+				min = 9;
+				max = 18;
+				spellmax="9th";
+			} else if (intel==19) {
+				immune = "1";
+				lang = 8;
+				spell = 95;
+				min = 11;
+				max = 30;
+				spellmax="9th";
+			} else if (intel==20) {
+				immune = "1-2";
+				lang = 9;
+				spell = 96;
+				min = 12;
+				max = 30;
+				spellmax="9th";
+			} else if (intel==21) {
+				immune = "1-3";
+				lang = 10;
+				spell = 97;
+				min = 13;
+				max = 30;
+				spellmax="9th";
+			} else if (intel==22) {
+				immune = "1-4";
+				lang = 11;
+				spell = 98;
+				min = 14;
+				max = 30;
+				spellmax="9th";
+			} else if (intel==23) {
+				immune = "1-5";
+				lang = 12;
+				spell = 99;
+				min = 15;
+				max = 30;
+				spellmax="9th";
+			} else if (intel==24) {
+				immune = "1-6";
+				lang = 15;
+				spell = 100;
+				min = 16;
+				max = 30;
+				spellmax="9th";
+			} else if (intel==25) {
+				immune = "1-7";
+				lang = 20;
+				spell = 100;
+				min = 17;
+				max = 30;
+				spellmax="9th";
+			}
+
+            setAttrs({
+                bonuslanguages: lang,
+				knowspell: spell,
+				minspells: min,
+				maxspells: max,
+				illusimmune: immune,
+				maxspelllevel: spellmax,
+				literacy: literacy
+            });
+        });
+    });
+
+	/* WISDOM CALCS */
+    on("change:wisdom sheet:opened", function() {
+        getAttrs(["wisdom"], function(values) {
+            let wis = parseInt(values.wisdom)||0;
+            let saveval = 0;
+			let spell1 = 0;
+			let spell2 = 0;
+			let spell3 = 0;
+			let spell4 = 0;
+			let spell5 = 0;
+			let spell6 = 0;
+			let spell7 = 0;
+			let immune = "None";
+			let failval = 100;
+			let max = "5th"
+			if (wis==1) {
+				saveval = -6;
+				failval = 80;
+			} else if (wis==2) {
+				saveval = -4;
+				failval = 60;
+			} else if (wis==3) {
+				saveval = -3;
+				failval = 50;
+			} else if (wis==4) {
+				saveval = -2;
+				failval = 45;
+			} else if (wis==5) {
+				failval = 40;
+				saveval = -1;
+			} else if (wis==6) {
+				failval = 35;
+				saveval = -1;
+			} else if (wis==7) {
+				failval = 30;
+				saveval = -1;
+			} else if (wis==8) {
+				failval = 25;
+				saveval = -1;
+			} else if (wis==9) {
+				failval = 20;
+			} else if (wis==10) {
+				failval = 15;
+			} else if (wis==11) {
+				failval = 10;
+			} else if (wis==12) {
+				failval = 5;
+			} else if (wis>12&&wis<26) {
+				failval = 0;
+				spell1++;
+				if (wis>13) {
+					spell1++;
+				}
+				if (wis>14) {
+					spell2++;
+					saveval++;
+				}
+				if (wis>15) {
+					spell2++;
+					saveval++;
+				}
+				if (wis>16) {
+					spell3++;
+					saveval++;
+					max = "6th";
+				}
+				if (wis>17) {
+					spell4++;
+					saveval++;
+					max = "7th";
+				}
+				if (wis>18) {
+					immune = "cause fear, charm person, command, friends, hypnotism"
+					spell1++;
+					spell4++;
+				}
+				if (wis>19) {
+					immune += ", forget, hold person, ray of enfeeblement, scare"
+					spell2++;
+					spell4++;
+				}
+				if (wis>20) {
+					immune += ", beguiling, domination, fear"
+					spell5++;
+					spell3++;
+				}
+				if (wis>21) {
+					immune += ", charm monster, confusion, emotion, fumble, suggestion, telempathic proiection"
+					spell5++;
+					spell4++;
+				}
+				if (wis>22) {
+					immune += ", chaos, feeblemind, hold monster, magic iar, mass domination, quest"
+					spell5+=2;
+				}
+				if (wis>23) {
+					immune += ", geas, mass suggestion, rulership"
+					spell6+=2;
+				}
+				if (wis>24) {
+					immune += ", antipathy/sympathy, finger of death, mass charm, Otto's irresistable dance"
+					spell6++;
+					spell7++;
+				}
+			}
+
+            setAttrs({
+                mentalsavebonus: saveval,
+				spellfailure: failval,
+				spellbonus1: spell1,
+				spellbonus2: spell2,
+				spellbonus3: spell3,
+				spellbonus4: spell4,
+				spellbonus5: spell5,
+				spellbonus6: spell6,
+				spellbonus7: spell7,
+				spellimmune: immune,
+				maxdivinespell: max
+            });
+        });
+    });
+
+	/* DEXTERITY CALCS */
+    on("change:dexterity sheet:opened", function() {
+        getAttrs(["dexterity"], function(values) {
+            let dex = parseInt(values.dexterity)||0;
+			let rng = 0;
+			let ac = 0;
+			if (dex==1) {
+				rng = -6;
+				ac = 5;
+			} else if (dex==2) {
+				rng = -4;
+				ac = 5;
+			} else if (dex==3) {
+				rng=-3;
+				ac=4;
+			} else if (dex==4) {
+				rng=-2;
+				ac=3;
+			} else if (dex==5) {
+				rng=-1;
+				ac=2;
+			} else if (dex==6) {
+				ac=1;
+			} else if (dex==15) {
+				ac=-1;
+			} else if (dex==16) {
+				rng = 1;
+				ac=-2;
+			} else if (dex==17) {
+				rng=2;
+				ac=-3;
+			} else if (dex==18||dex==19||dex==20) {
+				rng=3;
+				ac=-4;
+			} else if (dex==21||dex==22||dex==23) {
+				rng=4;
+				ac=-5;
+			} else if (dex==24||dex==25) {
+				rng=5;
+				ac=-6;
+			}
+
+
+            setAttrs({
+            surprisebonus: rng,
+			rangedbonus: rng,
+			armorbonus: ac
+            });
+        });
+    });
+
+
+	/* THAC0 CALS */
+
+	  on("change:THAC00 sheet:opened", function() {
+			getAttrs(["THAC00"], function(values) {
+				let thac = parseInt(values.THAC00)||0;
+
+				let neg10 = thac+10;
+				let neg9 = thac+9;
+				let neg8 = thac+8;
+				let neg7 = thac+7;
+				let neg6 = thac+6;
+				let neg5 = thac+5;
+				let neg4 = thac+4;
+				let neg3 = thac+3;
+				let neg2 = thac+2;
+				let neg1 = thac+1;
+
+				if(thac<=20&&thac>10){
+					if (thac==20){
+						neg1 = 20;
+						neg2 = 20;
+						neg3 = 20;
+						neg4 = 20;
+						neg5 = 20;
+						neg6 = 21;
+						neg7 = 22;
+						neg8 = 23;
+						neg9 = 24;
+						neg10 = 25;
+					} else if (thac==19) {
+						neg1 = 20;
+						neg2 = 20;
+						neg3 = 20;
+						neg4 = 20;
+						neg5 = 20;
+						neg6 = 20;
+						neg7 = 21;
+						neg8 = 22;
+						neg9 = 23;
+						neg10 = 24;
+					}	else if (thac==18) {
+						neg1 = 19;
+						neg2 = 20;
+						neg3 = 20;
+						neg4 = 20;
+						neg5 = 20;
+						neg6 = 20;
+						neg7 = 20;
+						neg8 = 21;
+						neg9 = 22;
+						neg10 = 23;
+					}	else if (thac==17) {
+						neg1 = 18;
+						neg2 = 19;
+						neg3 = 20;
+						neg4 = 20;
+						neg5 = 20;
+						neg6 = 20;
+						neg7 = 20;
+						neg8 = 20;
+						neg9 = 21;
+						neg10 = 22;
+					} else if (thac==16) {
+						neg1 = 17;
+						neg2 = 18;
+						neg3 = 19;
+						neg4 = 20;
+						neg5 = 20;
+						neg6 = 20;
+						neg7 = 20;
+						neg8 = 20;
+						neg9 = 20;
+						neg10 = 21;
+					} else if (thac==15) {
+						neg1 = 16;
+						neg2 = 17;
+						neg3 = 18;
+						neg4 = 19;
+						neg5 = 20;
+						neg6 = 20;
+						neg7 = 20;
+						neg8 = 20;
+						neg9 = 20;
+						neg10 = 20;
+					} else if (thac==14) {
+						neg1 = 15;
+						neg2 = 16;
+						neg3 = 17;
+						neg4 = 18;
+						neg5 = 19;
+						neg6 = 20;
+						neg7 = 20;
+						neg8 = 20;
+						neg9 = 20;
+						neg10 = 20;
+					} else if (thac==13) {
+						neg1 = 14;
+						neg2 = 15;
+						neg3 = 16;
+						neg4 = 17;
+						neg5 = 18;
+						neg6 = 19;
+						neg7 = 20;
+						neg8 = 20;
+						neg9 = 20;
+						neg10 = 20;
+					} else if (thac==12) {
+						neg1 = 13;
+						neg2 = 14;
+						neg3 = 15;
+						neg4 = 16;
+						neg5 = 17;
+						neg6 = 18;
+						neg7 = 19;
+						neg8 = 20;
+						neg9 = 20;
+						neg10 = 20;
+					} else if (thac==11) {
+						neg1 = 12;
+						neg2 = 13;
+						neg3 = 14;
+						neg4 = 15;
+						neg5 = 16;
+						neg6 = 17;
+						neg7 = 18;
+						neg8 = 19;
+						neg9 = 20;
+						neg10 = 20;
+					}
+				}
+				setAttrs({
+					THAC0neg1: neg1,
+					THAC0neg2: neg2,
+					THAC0neg3: neg3,
+					THAC0neg4: neg4,
+					THAC0neg5: neg5,
+					THAC0neg6: neg6,
+					THAC0neg7: neg7,
+					THAC0neg8: neg8,
+					THAC0neg9: neg9,
+					THAC0neg10: neg10,
+				});
+			});
+		});
+
+	/* THIEF SKILL CALCS */
+    on("change:dexterity change:pickpockets_misc change:movequietly_misc change:climbwalls_misc change:openlocks_misc change:hideinshadows_misc change:readlanguages_misc change:findtraps_misc change:hearnoise_misc change:backstab_misc change:armortype change:armorshield change:pickpockets_race change:openlocks_race change:findtraps_race change:movequietly_race change:hideinshadows_race change:hearnoise_race change:climbwalls_race change:readlanguages_race sheet:opened", function() {
+        getAttrs(["dexterity", "pickpockets_misc", "movequietly_misc", "climbwalls_misc", "openlocks_misc", "hideinshadows_misc", "readlanguages_misc", "findtraps_misc", "hearnoise_misc", "backstab_misc", "armortype", "armorshield", "pickpockets_race", "openlocks_race", "findtraps_race", "movequietly_race", "hideinshadows_race", "hearnoise_race", "climbwalls_race", "readlanguages_race"], function(values) {
+            let dex = parseInt(values.dexterity)||0;
+			let arm = parseInt(values.armortype)||0;
+			let shi = parseInt(values.armorshield)||0;
+
+			let pp = 0;
+			let pparm = 0;
+			let ms = 0;
+			let msarm = 0;
+			let cw = 0;
+			let cwarm = 0;
+			let ol = 0;
+			let olarm = 0;
+			let his = 0;
+			let hisarm = 0;
+			let rl = 0;
+			let rlarm = 0;
+			let frt = 0;
+			let frtarm = 0;
+			let hn = 0;
+			let hnarm = 0;
+			let bst = 0;
+			let bstarm = 0;
+
+			if(1==1) {
+			if (dex>0&&dex<26) {
+				pp-=15;
+				ol-=10;
+				frt-=10;
+				ms-=20;
+				his-=10;
+
+				if (dex>9) {
+					pp+=5;
+					ol+=5;
+					ms+=5;
+					his+=5;
+				}
+				if (dex>10) {
+					pp+=5;
+					ol+=5;
+					frt+=5;
+					ms+=5;
+					his+=5;
+				}
+				if (dex>11) {
+					pp+=5;
+					frt+=5;
+					ms+=5;
+				}
+				if (dex>12) {
+					ms+=5;
+				}
+				if (dex>15) {
+					ol+=5;
+				}
+				if (dex>16) {
+					pp+=5;
+					ol+=5;
+					ms+=5;
+					his+=5;
+				}
+				if (dex>17) {
+					pp+=5;
+					ol+=5;
+					frt+=5;
+					ms+=5;
+					his+=5;
+				}
+				if (dex>18) {
+					pp+=5;
+					ol+=5;
+					frt+=5;
+					ms+=2;
+					his+=2;
+				}
+				if (dex>19) {
+					pp+=5;
+					ol+=5;
+					frt+=5;
+					ms+=3;
+					his+=3;
+				}
+				if (dex>20) {
+					pp+=5;
+					ol+=5;
+					frt+=5;
+					ms+=3;
+					his+=3;
+				}
+				if (dex>21) {
+					pp+=5;
+					ol+=5;
+					frt+=5;
+					ms+=2;
+					his+=2;
+				}
+				if (dex>22) {
+					pp+=5;
+					ol+=5;
+					frt+=5;
+					ms+=3;
+					his+=3;
+				}
+				if (dex>23) {
+					pp+=5;
+					ol+=5;
+					frt+=5;
+					ms+=2;
+					his+=2;
+				}
+				if (dex>24) {
+					pp+=5;
+					ol+=5;
+					frt+=5;
+					ms+=5;
+					his+=5;
+				}
+			}
+			if (arm==0) {
+				pparm+=5;
+				msarm+=10;
+				hisarm+=5;
+				cwarm+=10;
+			}
+			if (arm>6) {
+				if(pp>0) {
+				pparm-=pp;
+				}
+				if(ms>0){
+				msarm-=ms;
+				}
+				if(ol>0) {
+				olarm-=ol;
+				}
+				if(his>0) {
+				hisarm-=his;
+				}
+				if(frt>0){
+				frtarm-=frt;
+				}
+
+				if(arm==16) {
+					pparm-=20;
+					olarm-=5;
+					frtarm-=5;
+					msarm-=10;
+					hisarm-=10;
+					hnarm-=5;
+					cwarm-=20;
+				}
+
+				if(arm==7||arm==9) {
+					pparm-=30;
+					olarm-=10;
+					frtarm-=10;
+					msarm-=20;
+					hisarm-=20;
+					hnarm-=10;
+					cwarm-=30;
+				}
+
+				if(arm==10||arm==15) {
+					pparm-=40;
+					olarm-=15;
+					frtarm-=15;
+					msarm-=30;
+					hisarm-=30;
+					hnarm-=20;
+					cwarm-=40;
+				}
+
+				if(arm==12||arm==19) {
+					pparm-=50;
+					olarm-=20;
+					frtarm-=20;
+					msarm-=60;
+					hisarm-=50;
+					hnarm-=30;
+					cwarm-=90;
+				}
+				if(arm==18||arm==20||arm==21) {
+					pparm-=75;
+					olarm-=40;
+					frtarm-=40;
+					msarm-=80;
+					hisarm-=75;
+					hnarm-=50;
+					cwarm-=99;
+				}
+				if(arm==22||arm==24||arm==25||arm==27) {
+					pparm-=100;
+					olarm-=80;
+					frtarm-=80;
+					msarm-=100;
+					hisarm-=110;
+					hnarm-=70;
+					cwarm-=99.9;
+				}
+			}
+		}
+
+
+
+            setAttrs({
+            pickpockets: pp,
+			pickpockets_armor: pparm,
+			pickpockets_total: parseInt(pp) + parseInt(pparm) + parseInt(values.pickpockets_misc) + parseInt(values.pickpockets_race),
+			movequietly: ms,
+			movequietly_armor: msarm,
+			movequietly_total: parseInt(ms) + parseInt(msarm) + parseInt(values.movequietly_misc) + parseInt(values.movequietly_race),
+/*			climbwalls: cw, */
+			climbwalls_armor: cwarm,
+			climbwalls_total: parseInt(cwarm) + parseInt(values.climbwalls_misc) + parseInt(values.climbwalls_race),
+			openlocks: ol,
+			openlocks_armor: olarm,
+			openlocks_total: parseInt(ol) + parseInt(olarm) + parseInt(values.openlocks_misc) + parseInt(values.openlocks_race),
+			hideinshadows: his,
+			hideinshadows_armor: hisarm,
+			hideinshadows_total: parseInt(his) + parseInt(hisarm) + parseInt(values.hideinshadows_misc) + parseInt(values.hideinshadows_race),
+			readlanguages: "N/A",
+			readlanguages_total: parseInt(values.readlanguages_misc) + parseInt(values.readlanguages_race),
+			findtraps: frt,
+			findtraps_armor: frtarm,
+			findtraps_total: parseInt(frt) + parseInt(frtarm) + parseInt(values.findtraps_misc) + parseInt(values.findtraps_race),
+			hearnoise: "N/A",
+			hearnoise_armor: hnarm,
+			hearnoise_total: parseInt(hnarm) + parseInt(values.hearnoise_misc) + parseInt(values.hearnoise_race),
+/*			backstab: bst */
+			backstab_total: parseInt(values.backstab_misc)
+            });
+        });
+    });
+
+	/* CONSTITUTION CALCS */
+    on("change:constitution sheet:opened", function() {
+        getAttrs(["constitution"], function(values) {
+            let con = parseInt(values.constitution)||0;
+			let reghp = 0;
+			let fighthp = 0;
+			let sys = 0;
+			let res = 0;
+			let min = 1;
+			let pos = 0;
+			let reg = "0/1";
+			let rac = 0;
+
+			if(con>0&&con<26){
+					reghp =-3;
+					fighthp =-3;
+					sys=25;
+					res=30;
+					pos = -2;
+				if (con>1) {
+					pos++;
+					sys+=5;
+					res+=5;
+					fighthp++;
+					reghp++;
+				}
+				if (con>2) {
+					pos++;
+					sys+=5;
+					res+=5;
+				}
+				if (con>3) {
+					reghp++;
+					fighthp++;
+					sys+=5;
+					res+=5;
+					rac++;
+				}
+				if (con>4) {
+					sys+=5;
+					res+=5;
+				}
+				if (con>5) {
+					sys+=5;
+					res+=5;
+				}
+				if (con>6) {
+					reghp++;
+					fighthp++;
+					sys+=5;
+					res+=5;
+					rac++;
+				}
+				if (con>7) {
+					sys+=5;
+					res+=5;
+				}
+				if (con>8) {
+					sys+=5;
+					res+=5;
+				}
+				if (con>9) {
+					sys+=5;
+					res+=5;
+				}
+				if (con>10) {
+					sys+=5;
+					res+=5;
+					rac++;
+				}
+				if (con>11) {
+					sys+=5;
+					res+=5;
+				}
+				if (con>12) {
+					sys+=5;
+					res+=5;
+				}
+				if (con>13) {
+					sys+=3;
+					res+=2;
+					rac++;
+				}
+				if (con>14) {
+					reghp++;
+					fighthp++;
+					sys+=3;
+					res+=2;
+				}
+				if (con>15) {
+					reghp++;
+					fighthp++;
+					sys+=4;
+					res+=2;
+				}
+				if (con>16) {
+					fighthp++;
+					sys+=2;
+					res+=2;
+				}
+				if (con>17) {
+					fighthp++;
+					sys+=2;
+					res+=2;
+					rac++;
+				}
+				if (con>18) {
+					fighthp++;
+					min++;
+					pos++;
+				}
+				if (con>19) {
+					reg="1/6";
+				}
+				if (con>20) {
+					min++;
+					pos++;
+					reg="1/5";
+					fighthp++;
+					rac++;
+				}
+				if (con>21) {
+					reg="1/4";
+				}
+				if (con>22) {
+					min++;
+					pos++;
+					reg="1/3";
+				}
+				if (con>23) {
+					fighthp++;
+					reg="1/2";
+				}
+				if (con>24) {
+					sys++;
+					pos++;
+					reg="1/1";
+					rac++;
+				}
+			}
+
+            setAttrs({
+            hitpointbonus: reghp,
+			hitpointbonusw: fighthp,
+			systemshock: sys,
+			resurrectionsurvival: res,
+			minhproll: min,
+			poisonsave: pos,
+			regeneration: reg,
+			saveracial: rac
+            });
+        });
+    });
+
+	/* CHARISMA CALCS */
+    on("change:charisma sheet:opened", function() {
+        getAttrs(["charisma"], function(values) {
+            let cha = parseInt(values.charisma)||0;
+			let max = 0;
+			let loy = 0;
+			let react = 0;
+			let awe = 0;
+
+			if(cha>0&&cha<26) {
+				loy=-40;
+				react=-35;
+				if(cha>1) {
+					max++;
+					loy+=5;
+					react+=5;
+				}
+				if(cha>2) {
+					loy+=5;
+					react+=5;
+				}
+				if(cha>3) {
+					loy+=5;
+					react+=5;
+				}
+				if(cha>4) {
+					max++;
+					loy+=5;
+					react+=5;
+				}
+				if(cha>5) {
+					loy+=5;
+					react+=5;
+				}
+				if(cha>6) {
+					max++;
+					loy+=5;
+					react+=5;
+				}
+				if(cha>7) {
+					react+=5;
+					loy+=5;
+				}
+				if (cha>8) {
+					max++;
+					loy+=5;
+				}
+				if (cha>11) {
+					max++;
+				}
+				if (cha>12) {
+					react+=5;
+				}
+				if (cha>13) {
+					max++;
+					loy+=5;
+					react+=5;
+				}
+				if (cha>14) {
+					max++;
+					loy+=10;
+					react+=5;
+				}
+				if (cha>15) {
+					max++;
+					loy+=5;
+					react+=10;
+				}
+				if (cha>16) {
+					max+=2;
+					loy+=10;
+					react+=5;
+				}
+				if (cha>17) {
+					max+=5;
+					loy+=10;
+					react+=5;
+				}
+				if (cha>18) {
+					max+=5;
+					loy+=10;
+					react+=5;
+					awe++;
+				}
+				if (cha>19) {
+					max+=5;
+					loy+=10;
+					react+=5;
+					awe++;
+				}
+				if (cha>20) {
+					max+=5;
+					loy+=10;
+					react+=5;
+					awe+=2;
+				}
+				if (cha>21) {
+					max+=5;
+					loy+=10;
+					react+=5;
+					awe+=2;
+				}
+				if (cha>22) {
+					max+=5;
+					loy+=10;
+					react+=5;
+					awe+=2;
+				}
+				if (cha>23) {
+					max+=5;
+					loy+=10;
+					react+=5;
+					awe+=2;
+				}
+				if (cha>24) {
+					max+=5;
+					react+=5;
+					awe+=2;
+				}
+			}
+
+
+            setAttrs({
+            maximumhenchmen: max,
+			loyaltybonus: loy,
+			reactionbonus: react,
+			awepower: awe
+            });
+        });
+    });
+
+
+/* Encumbrance Autofill */
+  on("change:armortype change:armorshield change:armormagic change:current_encumbrance sheet:opened", function() {
+		  getAttrs(["armortype", "armorshield", "armormagic", "current_encumbrance"], function(values) {
+				let armor = parseInt(values.armortype)||0;
+				let shield = parseInt(values.armorshield)||0;
+				let total = 0;
+				let enc = values.current_encumbrance;
+				let armormagic = parseInt(values.armormagic)||0;
+				let armortext = "None";
+				let shieldtext = "None";
+				let totaltext = "None";
+				let pentext = "None";
+
+
+				if (armor==7||armor==9||armor==10||armor==12||armor==15) {
+					if(armormagic<=0){
+						armortext = "Encumbering";
+						total++;
+					}
+				}
+				if (armor==18||armor==19||armor==21) {
+					if(armormagic<=0){
+						armortext = "Heavy Enc";
+						total+=2;
+					} else {
+						armortext = "Encumbering";
+						total++;
+					}
+				}
+				if (shield==4) {
+					shieldtext = "Encumbering";
+					total++;
+				}
+
+				if(total==1) {
+					totaltext = "Encumbered";
+				}
+				if(total==2) {
+					totaltext = "Heavy Enc";
+				}
+				if(total==3) {
+					totaltext = "Max";
+				}
+
+				if(enc==.749) {
+					pentext = "No +init/sur";
+				}
+				if(enc==.5) {
+					pentext = "-3 initiative";
+				}
+				if(enc==.25) {
+					pentext = "Lose init";
+				}
+
+				setAttrs({
+				armor_enc: armortext,
+				shield_enc: shieldtext,
+				total_enc: totaltext,
+				penalty_enc: pentext
+				});
+			});
+	});
+
+
+
+/* Weapon Autofill */
+
+	on('change:repeating_weapon', () => {
+		getSectionIDs('repeating_weapon', idarray => {
+			const fieldnames = [];
+			idarray.forEach(id => {
+				fieldnames.push(`repeating_weapon_${id}_WeaponType`);
+			});
+			getAttrs([...fieldnames], v => {
+				const output = {};
+				idarray.forEach(id => {
+					const thisWeapon = v[`repeating_weapon_${id}_WeaponType`]||0;
+					if(thisWeapon=="Aklys") {
+					output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+					output[`repeating_weapon_${id}_DamageLarge`] = "1d3";
+					output[`repeating_weapon_${id}_WeaponSpeed`] = "4";
+				} else if(thisWeapon=="Battle") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d8";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d8";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "7";
+			} else if(thisWeapon=="Hand") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "4";
+			} else if(thisWeapon=="Bardiche") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "2d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "3d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "9";
+			} else if(thisWeapon=="Bec") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d8";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d6";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "9";
+			} else if(thisWeapon=="Bill") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "2d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d10";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "10";
+			} else if(thisWeapon=="Bo") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d3";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "3";
+			} else if(thisWeapon=="Caltrop") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d2";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "n/a";
+			} else if(thisWeapon=="Club") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d3";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "4";
+			} else if(thisWeapon=="Dagger") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d3";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "2";
+			} else if(thisWeapon=="Fauchard") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d8";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "8";
+			} else if(thisWeapon=="FFork") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d8";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d10";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "8";
+			} else if(thisWeapon=="Fist") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d3";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d2";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "1";
+			} else if(thisWeapon=="Footman") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "d6+1";
+				output[`repeating_weapon_${id}_DamageLarge`] = "2d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "7";
+			} else if(thisWeapon=="Horseman") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "d4+1";
+				output[`repeating_weapon_${id}_DamageLarge`] = "d4+1";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "6";
+			} else if(thisWeapon=="ForkM") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d8";
+				output[`repeating_weapon_${id}_DamageLarge`] = "2d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "7";
+			} else if(thisWeapon=="Garrote") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d6";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "2";
+			} else if(thisWeapon=="Glaive") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d10";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "8";
+			} else if(thisWeapon=="GlaiveG") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "2d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "2d6";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "9";
+			} else if(thisWeapon=="Guisarme") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "2d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d8";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "8";
+			} else if(thisWeapon=="GuisarmeV") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "2d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "2d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "10";
+			} else if(thisWeapon=="Halberd") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d10";
+				output[`repeating_weapon_${id}_DamageLarge`] = "2d6";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "9";
+			} else if(thisWeapon=="Harpoon") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "2d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "2d6";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "6";
+			} else if(thisWeapon=="HammerL") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "2d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d6";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "9";
+			} else if(thisWeapon=="Hammer") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d4+1";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "4";
+			} else if(thisWeapon=="Hook") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "9";
+			} else if(thisWeapon=="Jo") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "2";
+			} else if(thisWeapon=="Knife") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d3";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d2";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "2";
+			} else if(thisWeapon=="LanceL") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d8";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "7";
+			} else if(thisWeapon=="LanceM") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6+1";
+				output[`repeating_weapon_${id}_DamageLarge`] = "2d6";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "6";
+			} else if(thisWeapon=="LanceH") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "3d3";
+				output[`repeating_weapon_${id}_DamageLarge`] = "3d6";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "8";
+			} else if(thisWeapon=="Lasso") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "0";
+				output[`repeating_weapon_${id}_DamageLarge`] = "0";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "10";
+			}
+			else if(thisWeapon=="MaceF") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6+1";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d6";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "7";
+			}
+			else if(thisWeapon=="MaceH") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "6";
+			} else if(thisWeapon=="Man") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d2";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d2";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "7";
+			} else if(thisWeapon=="Morning Star") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "2d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d6+1";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "7";
+			} else if(thisWeapon=="Partisan") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d6+1";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "9";
+			} else if(thisWeapon=="PickF") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6+1";
+				output[`repeating_weapon_${id}_DamageLarge`] = "2d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "7";
+			} else if(thisWeapon=="PickH") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d4+1";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "5";
+			} else if(thisWeapon=="Pike") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d12";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "13";
+			} else if(thisWeapon=="Ranseur") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "2d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "2d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "8";
+			} else if(thisWeapon=="Sap") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d2";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d2";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "2";
+			} else if(thisWeapon=="Scimitar") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d8";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d8";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "4";
+			} else if(thisWeapon=="SpearS") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d8";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "6";
+			} else if(thisWeapon=="SpearL") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d8";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "8";
+			} else if(thisWeapon=="Spetum") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6+1";
+				output[`repeating_weapon_${id}_DamageLarge`] = "2d6";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "8";
+			} else if(thisWeapon=="Buckler") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d3";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "4";
+			} else if(thisWeapon=="Staff") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d6";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "4";
+			} else if(thisWeapon=="SwordBa") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "2d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "2d8";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "6";
+			} else if(thisWeapon=="SwordBr") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "2d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d6+1";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "5";
+			} else if(thisWeapon=="SwordF") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6+1";
+				output[`repeating_weapon_${id}_DamageLarge`] = "2d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "5";
+			} else if(thisWeapon=="SwordK") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "2d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d6";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "9";
+			} else if(thisWeapon=="SwordL") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d8";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d12";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "5";
+			} else if(thisWeapon=="SwordS") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1d8";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "3";
+			} else if(thisWeapon=="SwordT") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d10";
+				output[`repeating_weapon_${id}_DamageLarge`] = "3d6";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "10";
+			} else if(thisWeapon=="Trident") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d6+1";
+				output[`repeating_weapon_${id}_DamageLarge`] = "3d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "7";
+			} else if(thisWeapon=="Voulge") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "2d4";
+				output[`repeating_weapon_${id}_DamageLarge`] = "2d4";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "10";
+			} else if(thisWeapon=="Whip") {
+				output[`repeating_weapon_${id}_DamageSmallMedium`] = "1d2";
+				output[`repeating_weapon_${id}_DamageLarge`] = "1";
+				output[`repeating_weapon_${id}_WeaponSpeed`] = "6";
+			}
+			else {
+					output[`repeating_weapon_${id}_DamageSmallMedium`] = "0";
+					output[`repeating_weapon_${id}_DamageLarge`] = "0";
+					output[`repeating_weapon_${id}_WeaponSpeed`] = "0";
+
+				}});
+				setAttrs(output);
+			});
+		});
+	});
+
+	on('change:repeating_ranged', () => {
+		getSectionIDs('repeating_ranged', idarray => {
+			const fieldnames = [];
+			idarray.forEach(id => {
+				fieldnames.push(`repeating_ranged_${id}_WeaponType`);
+			});
+			getAttrs([...fieldnames], v => {
+				const output = {};
+				idarray.forEach(id => {
+					const thisWeapon = v[`repeating_ranged_${id}_WeaponType`]||0;
+					if(thisWeapon=="Aklys") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d6";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d3";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1";
+						output[`repeating_ranged_${id}_Range`] = "2/-/-";
+					} else if(thisWeapon=="Atlatl") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d6";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d6";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1";
+						output[`repeating_ranged_${id}_Range`] = "6/12/18";
+					} else if(thisWeapon=="Hand") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d6";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d4";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1";
+						output[`repeating_ranged_${id}_Range`] = "2/4/6";
+					} else  if(thisWeapon=="Blowgun") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1";
+						output[`repeating_ranged_${id}_RateOfFire`] = "2";
+						output[`repeating_ranged_${id}_Range`] = "2/4/6";
+					} else if(thisWeapon=="BowCL") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d6";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d6";
+						output[`repeating_ranged_${id}_RateOfFire`] = "2";
+						output[`repeating_ranged_${id}_Range`] = "12/24/42";
+					} else if(thisWeapon=="BowCS") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d6";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d6";
+						output[`repeating_ranged_${id}_RateOfFire`] = "2";
+						output[`repeating_ranged_${id}_Range`] = "10/20/36";
+					} else if(thisWeapon=="BowL") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d6";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d6";
+						output[`repeating_ranged_${id}_RateOfFire`] = "2";
+						output[`repeating_ranged_${id}_Range`] = "14/28/42";
+					} else if(thisWeapon=="BowS") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d6";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d6";
+						output[`repeating_ranged_${id}_RateOfFire`] = "2";
+						output[`repeating_ranged_${id}_Range`] = "10/20/30";
+					} else if(thisWeapon=="Club") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d6";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d3";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1";
+						output[`repeating_ranged_${id}_Range`] = "2/4/6";
+					} else if(thisWeapon=="CBowHa") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d3";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d2";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1";
+						output[`repeating_ranged_${id}_Range`] = "4/8/12";
+					} else if(thisWeapon=="CBowHe") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d4+1";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d6+1";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1/2";
+						output[`repeating_ranged_${id}_Range`] = "16/32/48";
+					} else if(thisWeapon=="CBowL") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d4";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d4";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1";
+						output[`repeating_ranged_${id}_Range`] = "12/24/36";
+					} else if(thisWeapon=="Dagger") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d4";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d3";
+						output[`repeating_ranged_${id}_RateOfFire`] = "2";
+						output[`repeating_ranged_${id}_Range`] = "2/4/6";
+					} else if(thisWeapon=="Dart") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d3";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d2";
+						output[`repeating_ranged_${id}_RateOfFire`] = "3";
+						output[`repeating_ranged_${id}_Range`] = "3/6/9";
+					} else if(thisWeapon=="Hammer") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d4+1";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d4";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1";
+						output[`repeating_ranged_${id}_Range`] = "2/4/6";
+					} else if(thisWeapon=="Harpoon") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "2d4";
+						output[`repeating_ranged_${id}_DamageLarge`] = "2d6";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1";
+						output[`repeating_ranged_${id}_Range`] = "2/4/6";
+					} else if(thisWeapon=="Javelin") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d6";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d6";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1";
+						output[`repeating_ranged_${id}_Range`] = "4/8/12";
+					} else if(thisWeapon=="Knife") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d3";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d2";
+						output[`repeating_ranged_${id}_RateOfFire`] = "2";
+						output[`repeating_ranged_${id}_Range`] = "2/4/6";
+					} else if(thisWeapon=="Lasso") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "0";
+						output[`repeating_ranged_${id}_DamageLarge`] = "0";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1/2";
+						output[`repeating_ranged_${id}_Range`] = "2/4/6";
+					} else if(thisWeapon=="SlingB") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d4+1";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d6+1";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1";
+						output[`repeating_ranged_${id}_Range`] = "10/20/40";
+					} else if(thisWeapon=="SlingS") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d4";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d4";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1";
+						output[`repeating_ranged_${id}_Range`] = "8/16/32";
+					} else if(thisWeapon=="SpearS") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d6";
+						output[`repeating_ranged_${id}_DamageLarge`] = "1d8";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1";
+						output[`repeating_ranged_${id}_Range`] = "2/4/6";
+					} else if(thisWeapon=="StaffSB") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "2d4";
+						output[`repeating_ranged_${id}_DamageLarge`] = "3d3";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1/2";
+						output[`repeating_ranged_${id}_Range`] = "-/3-6/9";
+					} else if(thisWeapon=="StaffSS") {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "1d8";
+						output[`repeating_ranged_${id}_DamageLarge`] = "2d4";
+						output[`repeating_ranged_${id}_RateOfFire`] = "1/2";
+						output[`repeating_ranged_${id}_Range`] = "-/3-6/9";
+					} else {
+						output[`repeating_ranged_${id}_DamageSmallMedium`] = "0";
+						output[`repeating_ranged_${id}_DamageLarge`] = "0";
+						output[`repeating_ranged_${id}_RateOfFire`] = "0";
+						output[`repeating_ranged_${id}_Range`] = "0/0/0";
+					} });
+				setAttrs(output);
+			});
+		});
+	});
+
+
+	on('change:repeating_equipment remove:repeating_equipment', function(){
+		TAS.repeating('equipment')
+			.attrs('total_equipment_weight','total_equipment_cost')
+			.fields('item','quantity','weight','weightTotal','carried','equipment_totalweight','cost','equipment_runningtotal')
+			.reduce(function(m,r){
+				m.weightTotal=(r.F.weight*r.I.quantity);
+				if(r.carried === '1'){m.weight+=m.weightTotal;}
+				else{m.weight=m.weight;}
+				r.equipment_totalweight=m.weightTotal;
+				m.cost+=(r.F.cost*r.I.quantity);
+				r.D[2].equipment_runningtotal=m.cost;
+				return m;
+
+			},{weight:0,cost:0, desc: []},function(m,r,a){
+				a.total_equipment_weight=m.weight;
+				a.D[2].total_equipment_cost=m.cost;
+				console.log("===== Equipment Running Totals =====" + '\n' +"EquipmentWeightRunningTotal = " + m.weight + '\n' +"EquipmentCostRunningTotal = " + m.cost);
+			})
+			.execute();
+	});
+
+
+
+	on('change:repeating_equipment remove:repeating_equipment', function(){
+		TAS.repeating('equipment')
+			.attrs('total_equipment_weight','total_equipment_cost')
+			.fields('item','quantity','weight','weightTotal','carried','equipment_totalweight','cost','equipment_runningtotal')
+			.reduce(function(m,r){
+				m.weightTotal=(r.F.weight*r.I.quantity);
+				if(r.carried === '1'){m.weight+=m.weightTotal;}
+				else{m.weight=m.weight;}
+				r.equipment_totalweight=m.weightTotal;
+				m.cost+=(r.F.cost*r.I.quantity);
+				r.D[2].equipment_runningtotal=m.cost;
+				return m;
+
+			},{weight:0,cost:0, desc: []},function(m,r,a){
+				a.total_equipment_weight=m.weight;
+				a.D[2].total_equipment_cost=m.cost;
+				console.log("===== Equipment Running Totals =====" + '\n' +"EquipmentWeightRunningTotal = " + m.weight + '\n' +"EquipmentCostRunningTotal = " + m.cost);
+			})
+			.execute();
+	});
+
+
+	on('change:repeating_weapon remove:repeating_weapon', function(){
+		TAS.repeating('weapon')
+			.attrs('total_weapon_weight','total_weapon_cost')
+			.fields('name','quantity','weight','weapon_totalweight','cost','weapon_runningtotal')
+			.reduce(function(m,r){
+				m.weight+=(r.F.weight*r.I.quantity);
+				r.D[2].weapon_totalweight=(r.F.weight*r.I.quantity);
+				m.cost+=(r.F.cost*r.I.quantity);
+				r.D[2].weapon_runningtotal=m.cost;
+				return m;
+
+			},{weight:0,cost:0, desc: []},function(m,r,a){
+				a.total_weapon_weight=m.weight;
+				a.D[2].total_weapon_cost=m.cost;
+				console.log("===== Weapon Running Totals =====" + '\n' +"WeaponWeightRunningTotal = " + m.weight + '\n' +"WeaponCostRunningTotal = " + m.cost);
+			})
+			.execute();
+	});
+
+	on('sheet:opened change:pp change:gp change:ep change:sp change:cp change:pp_non change:gp_non change:ep_non change:sp_non change:cp_non change:armor_weight change:armor_cost', function(){
+		getAttrs(['pp','gp','ep','sp','cp','pp_total','gp_total','ep_total','sp_total','cp_total','pp_non','gp_non','ep_non','sp_non','cp_non','armor_weight','armor_cost'], function(values){
+		  setAttrs({
+		  pp_total: (parseFloat(values.pp) + parseFloat(values.pp_non)),
+			gp_total: (parseFloat(values.gp) + parseFloat(values.gp_non)),
+			ep_total: (parseFloat(values.ep) + parseFloat(values.ep_non)),
+			sp_total: (parseFloat(values.sp) + parseFloat(values.sp_non)),
+			cp_total: (parseFloat(values.cp) + parseFloat(values.cp_non)),
+
+			pp_value: (parseFloat(values.pp)*5+parseFloat(values.pp_non)*5),
+			gp_value: (parseFloat(values.gp)+parseFloat(values.gp_non)),
+			ep_value: (parseFloat(values.ep)/2+parseFloat(values.ep_non)/2),
+			sp_value: (parseFloat(values.sp)/20+parseFloat(values.sp_non)/20),
+			cp_value: (parseFloat(values.cp)/200+parseFloat(values.cp_non)/200),
+
+			total_coin_weight: Math.round(((parseFloat(values.pp) + parseFloat(values.gp) + parseFloat(values.ep) + parseFloat(values.sp) + parseFloat(values.cp)))),
+			total_coin_cost: (parseFloat(values.pp)*5+parseFloat(values.pp_non)*5+parseFloat(values.gp)+parseFloat(values.gp_non)+parseFloat(values.ep)/2+parseFloat(values.ep_non)/2+parseFloat(values.sp)/20+parseFloat(values.sp_non)/20+parseFloat(values.cp)/200+parseFloat(values.cp_non)/200)
+//			total_armor_weight: (parseFloat(values.armor_weight)),
+//			total_armor_cost: (parseFloat(values["armor_cost"],10)).toFixed(2)
+		  });
+	   });
+	});
+
+
+	on('sheet:opened change:total_armor_weight change:total_weapon_weight change:total_coin_weight change:total_equipment_weight change:repeating_equipment remove:repeating_equipment change:repeating_weapon remove:repeating_weapon change:pp change:gp change:ep change:sp change:cp change:armor_weight change:armor_cost change:total_armor_cost change:total_weapon_cost change:total_equipment_cost', function(){
+		getAttrs(['total_armor_weight','total_weapon_weight','total_coin_weight','total_equipment_weight','total_armor_cost','total_weapon_cost','total_equipment_cost','total_coin_cost'], function(values){
+		  setAttrs({
+			total_weight: Math.round(parseFloat(values.total_armor_weight) + parseFloat(values.total_weapon_weight) + parseFloat(values.total_coin_weight) + parseFloat(values.total_equipment_weight)),
+//			total_cost: (parseFloat(values["total_armor_cost"],10) + parseFloat(values["total_weapon_cost"],10) + parseFloat(values["total_equipment_cost"],10)).toFixed(2)
+				total_cost: (parseFloat(values["total_coin_cost"],10) + parseFloat(values["total_equipment_cost"],10)).toFixed(2)
+		  });
+	   });
+	});
+
+	/* check and set encumbrance */
+	/*on('sheet:opened change:normal_load change:heavy_load change:very_heavy_load change:max_load change:total_weight', function(){
+		getAttrs(['normal_load','heavy_load','very_heavy_load','max_load','total_weight'], function(values){
+		if(values.total_weight <= values.normal_load) {setAttrs({current_encumbrance:0}); console.log("===== Encumbrance is Normal =====");}
+		else if(values.total_weight > values.normal_load && values.total_weight <= values.heavy_load) {setAttrs({current_encumbrance:1}); console.log("===== Encumbrance is Heavy =====");}
+		else if(values.total_weight > values.heavy_load && values.total_weight <= values.very_heavy_load) {setAttrs({current_encumbrance:2}); console.log("===== Encumbrance is Very Heavy =====");}
+		else {setAttrs({current_encumbrance:3}); console.log("===== Encumbrance is Max =====");}
+	   });
+	});*/
+
+// Arcane Spell Tabs
+	on('change:spell_tabs', () => {
+		getSectionIDs('repeating_spells', idarray => {
+			const fieldnames = [];
+			idarray.forEach(id => {
+				fieldnames.push(`repeating_spells_${id}_level`);
+			});
+			getAttrs(['spell_tabs', ...fieldnames], v => {
+				const output = {};
+				const level = +v.spell_tabs||0;
+				idarray.forEach(id => {
+						const thislevel = +v[`repeating_spells_${id}_level`] || 0;
+						output[`repeating_spells_${id}_spell_show`] = (level === -1 || level === thislevel) ? 1 : 0;
+				});
+				setAttrs(output);
+			});
+		});
+	});
+
+// Divine Spell Tabs
+	on('change:divine_spell_tabs', () => {
+		getSectionIDs('repeating_divine_spells', idarray => {
+			const fieldnames = [];
+			idarray.forEach(id => {
+				fieldnames.push(`repeating_divine_spells_${id}_level`);
+			});
+			getAttrs(['divine_spell_tabs', ...fieldnames], v => {
+				const output = {};
+				const level = +v.divine_spell_tabs||0;
+				idarray.forEach(id => {
+						const thislevel = +v[`repeating_divine_spells_${id}_level`] || 0;
+						output[`repeating_divine_spells_${id}_divine_spell_show`] = (level === -1 || level === thislevel) ? 1 : 0;
+				});
+				setAttrs(output);
+			});
+		});
+	});
+
+	var Sheet = Sheet || (function() {
+
+		var version = 1.51,
+		Debug = false,
+
+	// copy DmgBonus value to AttackDmgBonus
+		dmgSwap = function() {
+			getSectionIDs("repeating_weapon", function(idarray) { //Get oldSectionID
+				var update={};
+				_.each(idarray, function(currentID, i) {
+					getAttrs(['repeating_weapon_' + currentID + '_DmgBonus'], function(v) { //Get oldAttribute from FieldID
+						update['repeating_weapon_' + currentID + '_AttackDmgBonus'] = v['repeating_weapon_' + currentID + '_DmgBonus']; //replaces old attribute value with new
+						setAttrs(update,{silent:true}); //Update
+					});
+				});
+			});
+	// replace all instances of @{DmgBonus} with @{AttackDmgBonus} in macro-text
+			var update = {}, attrs = [];
+			getSectionIDs("repeating_weapon", function(idarray) {
+				_.each(idarray, function(itemid) {
+					attrs.push("repeating_weapon_" + itemid + "_macro-text");
+				});
+				getAttrs(attrs, function(v) {
+					_.each(idarray, function(id) {
+						update["repeating_weapon_" + id + "_macro-text"] = v["repeating_weapon_" + id + "_macro-text"].replace(new RegExp('@{DmgBonus}', 'g'), '@{AttackDmgBonus}');
+					});
+					setAttrs(update,{silent:true});
+				});
+			});
+		},
+// copy max value to current_max
+		maxSwap = function() {
+			getSectionIDs("repeating_ability", function(idarray) { //Get oldSectionID
+				var update={};
+				_.each(idarray, function(currentID, i) {
+					getAttrs(['repeating_ability_' + currentID + '_max'], function(v) { //Get oldAttribute from FieldID
+						update['repeating_ability_' + currentID + '_current_max'] = v['repeating_ability_' + currentID + '_max']; //replaces old attribute value with new
+						setAttrs(update,{silent:true}); //Update
+					});
+				});
+			});
+		},
+
+//replace default macro-text of non weapon proficiencies ONLY IF they haven't been edited
+		nwpMacroUpdate = function() {
+			var update = {}, attrs = [];
+			getSectionIDs("repeating_nonweaponproficiencies", function(idarray) {
+				_.each(idarray, function(itemid) {
+					attrs.push("repeating_nonweaponproficiencies_" + itemid + "_macro-text");
+				});
+				getAttrs(attrs, function(v) {
+					_.each(idarray, function(id) {
+						update["repeating_nonweaponproficiencies_" + id + "_macro-text"] = v["repeating_nonweaponproficiencies_" + id + "_macro-text"].replace('&{template:general} {{name=@{character_name}}} {{subtag=Non Weapon Proficiency: @{name}}} {{=@{short_description}}}{{Success Amount=[[((@{rAttribute})+(@{rSlots}-1)-1d20)cs>1cf<-1]]}}',
+						'&{template:general} {{color=@{color_option}}} {{name=@{character_name}}} {{subtag=Non Weapon Proficiency: @{name}}} {{Proficiency Check=[[ 1d20 + [[@{rmodifier}]][MOD] + [[?{Additional modifier?|0}]][MOD] ]] vs [[ @{rAttribute}[ATTR] ]]}}{{freetext=@{short_description}}}');
+					});
+					console.log("nwpMacroUpdate check completed on: " +attrs);
+					setAttrs(update,{silent:true});
+				});
+			});
+		},
+//add {{color=@{color}}} to repeating section macro-text
+		colorUpdate = function() {
+		//update repeating_weapon_
+			var updateWeapon = {}, attrsWeapon = [];
+			getSectionIDs("repeating_weapon", function(idarray) {
+				_.each(idarray, function(itemid) {
+					attrsWeapon.push("repeating_weapon_" + itemid + "_macro-text");
+				});
+				getAttrs(attrsWeapon, function(v) {
+					_.each(idarray, function(id) {
+						updateWeapon["repeating_weapon_" + id + "_macro-text"] = v["repeating_weapon_" + id + "_macro-text"].replace('&{template:attacks} {{name=@{character_name}}}',
+						'&{template:attacks} {{color=@{color_option}}} {{name=@{character_name}}}');
+					});
+					console.log("colorUpdate check completed on: " +attrsWeapon);
+					setAttrs(updateWeapon,{silent:true});
+				});
+			});
+			//update repeating_magic_items
+				var updateAbility = {}, attrsAbility = [];
+				getSectionIDs("repeating_magic_items", function(idarray) {
+					_.each(idarray, function(itemid) {
+						attrsAbility.push("repeating_magic_items_" + itemid + "_macro-text");
+					});
+					getAttrs(attrsAbility, function(v) {
+						_.each(idarray, function(id) {
+							updateAbility["repeating_magic_items_" + id + "_macro-text"] = v["repeating_magic_items_" + id + "_macro-text"].replace('&{template:general} {{name=@{character_name}}}',
+							'&{template:general} {{color=@{color_option}}} {{name=@{character_name}}}');
+						});
+						console.log("colorUpdate check completed on: " +attrsAbility);
+						setAttrs(updateAbility,{silent:true});
+					});
+				});
+
+
+		//update repeating_ability_
+			var updateAbility = {}, attrsAbility = [];
+			getSectionIDs("repeating_ability", function(idarray) {
+				_.each(idarray, function(itemid) {
+					attrsAbility.push("repeating_ability_" + itemid + "_macro-text");
+				});
+				getAttrs(attrsAbility, function(v) {
+					_.each(idarray, function(id) {
+						updateAbility["repeating_ability_" + id + "_macro-text"] = v["repeating_ability_" + id + "_macro-text"].replace('&{template:general} {{name=@{character_name}}}',
+						'&{template:general} {{color=@{color_option}}} {{name=@{character_name}}}');
+					});
+					console.log("colorUpdate check completed on: " +attrsAbility);
+					setAttrs(updateAbility,{silent:true});
+				});
+			});
+
+		//update repeating_spells_
+			var updateSpells = {}, attrsSpells = [];
+			getSectionIDs("repeating_spells", function(idarray) {
+				_.each(idarray, function(itemid) {
+					attrsSpells.push("repeating_spells_" + itemid + "_macro-text");
+				});
+				getAttrs(attrsSpells, function(v) {
+					_.each(idarray, function(id) {
+						updateSpells["repeating_spells_" + id + "_macro-text"] = v["repeating_spells_" + id + "_macro-text"].replace('&{template:general} {{name=@{character_name}}}',
+						'&{template:general} {{color=@{color_option}}} {{name=@{character_name}}}');
+					});
+					console.log("colorUpdate check completed on: " +attrsSpells);
+					setAttrs(updateSpells,{silent:true});
+				});
+			});
+		},
+
+	/* recalculateSheet */
+		recalculateSheet = function(oldversion) {
+			if (oldversion < 0.1) {
+	//call your functions here
+				dmgSwap();
+			}
+			if (oldversion < 1.2) {
+				maxSwap();
+			}
+			if (oldversion < 1.5) {
+				nwpMacroUpdate();
+				colorUpdate();
+			}
+		},
+
+	/* checkForUpdate looks at current version of page in
+	 * sheet_version and compares to code Sheet.version calls
+	 * recalulateSheet if versions don't match or if recalculate
+	 * button was pressed. */
+		checkForUpdate = function() {
+			getAttrs(["sheet_version","sheet_forcesync","recalc1"],function(v){
+				var setter={},currVer=0,setAny=0,recalc=false;
+				currVer=parseFloat(v["sheet_version"],10)||0;
+				console.log("Current sheet data version:"+currVer+", Sheet code version:" + version );
+
+				if ( currVer!== version ) {
+					recalc=true;
+					setter["sheet_version"]= version;
+					setAny=1;
+				}
+				if (v["recalc1"] && v["recalc1"]!="0" ) {
+					currVer=-1;
+					recalc=true;
+					setter["recalc1"]=0;
+					setAny=1;
+				}
+				if (v["sheet_forcesync"] && v["sheet_forcesync"]!="0" ) {
+					currVer=-1;
+					recalc=true;
+					setter["sheet_forcesync"]=0;
+					setAny=1;
+				}
+				if (setAny) {
+					setAttrs( setter);
+				}
+				if (recalc) {
+					recalculateSheet(currVer);
+				}
+			});
+		};
+		return {
+			version:version,
+			checkForUpdate:checkForUpdate,
+			dmgSwap:dmgSwap,
+			maxSwap:maxSwap,
+			nwpMacroUpdate:nwpMacroUpdate,
+			colorUpdate:colorUpdate
+		};
+	}());
+
+	//sheet
+	on("sheet:opened",function() {Sheet.checkForUpdate();});
+	on("change:recalc1",function() {Sheet.checkForUpdate();});
+	console.log("...recalc checking for update");
+
+</script>
